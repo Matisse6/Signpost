@@ -48,12 +48,23 @@
     <script>!function (e, t) { "object" == typeof exports && "undefined" != typeof module ? t(exports) : "function" == typeof define && define.amd ? define(["exports"], t) : t(e.Cookie = e.Cookie || {}) }(this, function (e) { "use strict"; function t(e, t) { return Object.prototype.hasOwnProperty.call(e, t) } function o(e) { return e.replace(/[.*+?^$|[\](){}\\-]/g, "\\$&") } function n(e) { var t = e.charAt(e.length - 1), o = parseInt(e, 10), n = new Date; switch (t) { case "Y": n.setFullYear(n.getFullYear() + o); break; case "M": n.setMonth(n.getMonth() + o); break; case "D": n.setDate(n.getDate() + o); break; case "h": n.setHours(n.getHours() + o); break; case "m": n.setMinutes(n.getMinutes() + o); break; case "s": n.setSeconds(n.getSeconds() + o); break; default: n = new Date(e) }return n } function r(e) { var o = ""; for (var r in e) if (t(e, r)) if (/^expires$/i.test(r)) { var i = e[r]; "object" !== (void 0 === i ? "undefined" : l(i)) && (i += "number" == typeof i ? "D" : "", i = n(i)), o += ";" + r + "=" + i.toUTCString() } else /^secure$/.test(r) ? e[r] && (o += ";" + r) : o += ";" + r + "=" + e[r]; return t(e, "path") || (o += ";path=/"), o } function i() { var e = RegExp("(?:^|; )@key@=1(?:;|$)"); document.cookie = "@key@=1"; var t = e.test(document.cookie); return t && f("@key@"), t } function u(e) { var t = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : decodeURIComponent; if ("string" != typeof e || !e) return null; var n = RegExp("(?:^|; )" + o(e) + "(?:=([^;]*))?(?:;|$)"), r = n.exec(document.cookie); return null === r ? null : "function" == typeof t ? t(r[1]) : r[1] } function c() { for (var e = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : decodeURIComponent, t = /(?:^|; )([^=]+?)(?:=([^;]*))?(?:;|$)/g, o = {}, n = void 0; n = t.exec(document.cookie);)t.lastIndex = n.index + n.length - 1, o[n[1]] = "function" == typeof e ? e(n[2]) : n[2]; return o } function a(e, t) { var o = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : encodeURIComponent, n = arguments[3]; "object" === (void 0 === o ? "undefined" : l(o)) && null !== o && (n = o, o = encodeURIComponent); var i = r(n || {}), u = "function" == typeof o ? o(t) : t, c = e + "=" + u + i; document.cookie = c } function f(e, t) { var o = { expires: -1 }; return t && t.domain && (o.domain = t.domain), a(e, "a", o) } function s(e) { return u(e, null) } function d(e, t, o) { return a(e, t, null, o) } var l = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) { return typeof e } : function (e) { return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e }; e.isEnabled = i, e.get = u, e.getAll = c, e.set = a, e.getRaw = s, e.setRaw = d, e.remove = f, e.isCookieEnabled = i, e.getCookie = u, e.getAllCookies = c, e.setCookie = a, e.getRawCookie = s, e.setRawCookie = d, e.removeCookie = f, Object.defineProperty(e, "__esModule", { value: !0 }) });</script>
     <script type="text/javascript">var staticAssetsVersion = "22"; var assetsBaseUrl = "https://signpost.nl/";</script>
     <link rel="stylesheet" href="https://use.typekit.net/lpv1wbn.css">
+    <link rel="stylesheet" href="https://signpost.nl/assets/css/style.min.22.css">
+
     <style>
         [v-cloak] {
             display: none !important
         }
+
+        @media screen and (min-width: 48em) {
+            .Container {
+                max-width: 100%;
+            }
+        }
+
+        .Container {
+            max-width: 100%;
+        }
     </style>
-    <link rel="stylesheet" href="https://signpost.nl/assets/css/style.min.22.css">
     <title>Signpost | Home</title>
     <script>dataLayer = [];
         (function (w, d, s, l, i) {
@@ -340,6 +351,10 @@
                                             href="http://127.0.0.1:5500/repair.html" data-item-id="136299"><span
                                                 class="Nav-link-text">Repair</span></a>
                                     </li>
+                                    <li class="Nav-item"><a title="RepairWorker" class="Nav-link js-triggerLink"
+                                            href="http://127.0.0.1:5500/repair_worker.html" data-item-id="136299"><span
+                                                class="Nav-link-text">Repair Worker</span></a>
+                                    </li>
                                 </ul>
                             </nav>
                             <nav class="Nav Nav--lang" aria-label="Taalkeuze" aria-role="navigation"><span
@@ -397,7 +412,7 @@
             }
 
             .option-button {
-                background-color: #0077b6;
+                background-color: #28acbc;
                 color: white;
                 padding: 10px 20px;
                 border: none;
@@ -433,13 +448,13 @@
 
             .software-content a {
                 text-decoration: none;
-                color: #0077b6;
+                color: #28acbc;
                 font-weight: bold;
                 transition: color 0.3s;
             }
 
             .software-content a:hover {
-                color: #005b8a;
+                color: #208c94;
             }
 
 

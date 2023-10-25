@@ -390,491 +390,113 @@
                 </div>
             </div>
         </header>
+        <style>
+            .Main {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin: 50px;
+            }
+
+            .image-section {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .image-section img {
+                width: 700px;
+                height: 400px;
+            }
+
+            .graph-selection {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+
+            .graph-selection h2 {
+                font-size: 20px;
+            }
+
+            .graph-selection select {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 3px;
+                font-size: 16px;
+            }
+
+            .graph-display {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+            }
+
+            .chart {
+                width: 49%;
+                /* Use 49% to ensure some spacing between graphs */
+                max-width: 100%;
+                height: 300px;
+                /* Adjust the height as needed */
+            }
+        </style>
+
+
         <div class="Main">
-            <main class="Main-content">
-                <section class="Block Block--homebanner Block--blue">
-                    <picture class="Homebanner-object"><img class="Homebanner-image LazyLoaded"
-                            src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%271175%27%20height%3D%27783%27%20style%3D%27background%3Atransparent%27%2F%3E"
-                            alt="Leerkracht digitaal leren leerlingen" data-sizes="100vw"
-                            data-srcset="https://signpost.nl/transforms/files/Sfeerbeelden/11640/Leerkracht-digitaal-leren-leerlingen_7f6d24d610397fb6912c4a2160a21d44.png 1175w, https://signpost.nl/transforms/files/Sfeerbeelden/11640/Leerkracht-digitaal-leren-leerlingen_2813b8e3b31827919112b6d1feb4ff9c.png 768w, https://signpost.nl/transforms/files/Sfeerbeelden/11640/Leerkracht-digitaal-leren-leerlingen_75329d3d49fbb8efa7179a56b5a6bdeb.png 360w"
-                            sizes="100vw"
-                            srcset="https://signpost.nl/transforms/files/Sfeerbeelden/11640/Leerkracht-digitaal-leren-leerlingen_7f6d24d610397fb6912c4a2160a21d44.png 1175w, https://signpost.nl/transforms/files/Sfeerbeelden/11640/Leerkracht-digitaal-leren-leerlingen_2813b8e3b31827919112b6d1feb4ff9c.png 768w, https://signpost.nl/transforms/files/Sfeerbeelden/11640/Leerkracht-digitaal-leren-leerlingen_75329d3d49fbb8efa7179a56b5a6bdeb.png 360w">
-                    </picture>
-                    <div class="Homebanner-clip"></div>
-                    <div class="Homebanner-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 109.92 109.92">
-                            <path
-                                d="M98.16,109.92H11.76A11.76,11.76,0,0,1,0,98.16V11.76A11.76,11.76,0,0,1,11.76,0h86.4a11.77,11.77,0,0,1,11.76,11.76v86.4a11.77,11.77,0,0,1-11.76,11.76"
-                                fill="#00adbd"></path>
-                            <path
-                                d="M78.82,22.61,67.57,35.86H47.92A7.5,7.5,0,0,0,43,37.24a4.26,4.26,0,0,0-1.66,3.38,3.33,3.33,0,0,0,1.38,2.6Q44,44.42,49,45.46q12.28,2.67,17.6,5.37a18.56,18.56,0,0,1,7.75,6.73,17.13,17.13,0,0,1,2.42,9,19.28,19.28,0,0,1-3.23,10.77,20.19,20.19,0,0,1-9,7.48q-5.79,2.55-14.6,2.55-15.48,0-21.44-6a23.62,23.62,0,0,1-6.73-15.17l17.82-1.11a13.5,13.5,0,0,0,2.36,6.62c1.92,2.47,4.69,3.69,8.27,3.69a9.17,9.17,0,0,0,6.18-1.88,5.66,5.66,0,0,0,2.17-4.37,5.6,5.6,0,0,0-2-4.23q-2.07-1.86-9.61-3.52Q34.55,58.65,29.29,54A14.83,14.83,0,0,1,24,42.32a15.89,15.89,0,0,1,2.71-8.85c1.8-2.78,4.73-6.14,8.36-7.74A35.32,35.32,0,0,1,49.7,22.62Z"
-                                fill="#fff"></path>
-                            <path d="M83.75,22.61,72.51,35.86H83.7L94.94,22.61Z" fill="#1d1d1b"></path>
-                        </svg></div>
-                    <div class="Homebanner-body">
-                        <h1 class="Homebanner-title">De ICT-partner voor het onderwijs</h1>
-                        <div class="Homebanner-intro u-lastChildren">
-                            <p>Signpost biedt oplossingen voor lager, secundair en hoger onderwijs. Hierbij hanteren we
-                                een servicegerichte aanpak waarbij we hardware, software en training combineren.</p>
-                        </div>
-                    </div>
-                </section>
-                <section class="Block Block--circle is-learning Block--black">
-                    <div class="Container">
-                        <div class="Block-header">
-                            <div class="Container Container--xs">
-                                <p><strong>Via kwalitatieve hardware, up-to-date software en online leermiddelen
-                                        begeleidt Signpost scholen bij hun digitalisering. We beschikken over een team
-                                        van ervaren techniekers, gedreven trainers en een eigen helpdesk. </strong><br>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="Grid Grid--withLargeGutter">
-                            <div class="Grid-cell u-size1of2 u-md-sizeFull u-sm-sizeFull u-xs-sizeFull">
-                                <div class="FlexEmbed FlexEmbed--1by1">
-                                    <div class="FlexEmbed-content">
-                                        <div class="Circle-svg js-svgCircle"><svg xmlns="http://www.w3.org/2000/svg"
-                                                viewBox="0 0 274.8 294.94">
-                                                <g class="Circle-group Circle-group--software" data-group="software">
-                                                    <polygon
-                                                        points="130 14.11 130 145.51 19.07 205.13 2.91 152.18 16.11 91.72 50.91 45.2 83.95 26.63 130 14.11"
-                                                        fill="#eaf3df"></polygon>
-                                                    <path
-                                                        d="M15.47,207.24l-.21-.39A135.2,135.2,0,0,1,119.55,10.16l1.14,9.93A125.2,125.2,0,0,0,24.12,202.21l.2.38Z"
-                                                        fill="#8dc155"></path>
-                                                    <polygon
-                                                        points="130 14.11 121.02 24.86 112.05 35.62 108.92 17.81 105.79 0 117.89 7.05 130 14.11"
-                                                        fill="#8dc155"></polygon>
-                                                    <path
-                                                        d="M68.18,178.66c-.14-.27-.28-.53-.41-.8A76.76,76.76,0,0,1,122.32,67.74l1.44,7.87A68.77,68.77,0,0,0,74.9,174.24c.12.24.24.48.37.71Z"
-                                                        fill="#8dc155"></path>
-                                                    <polygon
-                                                        points="129 70.39 123.98 76.4 118.97 82.41 117.22 72.46 115.47 62.51 122.23 66.45 129 70.39"
-                                                        fill="#8dc155"></polygon><text
-                                                        transform="translate(86.37 159.84) rotate(-103.94)"
-                                                        font-size="10" font-family="new-rubrik-edge"
-                                                        font-weight="600">A</text><text
-                                                        transform="translate(84.79 153.37) rotate(-97.59)"
-                                                        font-size="10" font-family="new-rubrik-edge"
-                                                        font-weight="600">c</text><text
-                                                        transform="translate(84.07 148.03) rotate(-91.89)"
-                                                        font-size="10" font-family="new-rubrik-edge"
-                                                        font-weight="600">a</text><text
-                                                        transform="matrix(0.07, -1, 1, 0.07, 83.87, 142.65)"
-                                                        font-size="10" font-family="new-rubrik-edge"
-                                                        font-weight="600">d</text><text
-                                                        transform="translate(84.28 136.83) rotate(-79.88)"
-                                                        font-size="10" font-family="new-rubrik-edge"
-                                                        font-weight="600">e</text><text
-                                                        transform="translate(85.14 131.41) rotate(-72.49)"
-                                                        font-size="10" font-family="new-rubrik-edge"
-                                                        font-weight="600">m</text><text
-                                                        transform="translate(87.82 123.38) rotate(-66.66)"
-                                                        font-size="10" font-family="new-rubrik-edge"
-                                                        font-weight="600">i</text><text
-                                                        transform="translate(88.82 120.91) rotate(-62.44)"
-                                                        font-size="10" font-family="new-rubrik-edge"
-                                                        font-weight="600">c</text><text
-                                                        transform="matrix(0.59, -0.81, 0.81, 0.59, 92.58, 114.02)"
-                                                        font-size="10" font-family="new-rubrik-edge"
-                                                        font-weight="600">S</text><text
-                                                        transform="translate(96.19 109.08) rotate(-47.48)"
-                                                        font-size="10" font-family="new-rubrik-edge"
-                                                        font-weight="600">o</text><text
-                                                        transform="translate(100.12 104.85) rotate(-42.24)"
-                                                        font-size="10" font-family="new-rubrik-edge"
-                                                        font-weight="600">f</text><text
-                                                        transform="translate(103.19 102.06) rotate(-37.82)"
-                                                        font-size="10" font-family="new-rubrik-edge"
-                                                        font-weight="600">t</text><text
-                                                        transform="translate(106.29 99.5) rotate(-31.49)" font-size="10"
-                                                        font-family="new-rubrik-edge" font-weight="600">w</text><text
-                                                        transform="matrix(0.91, -0.41, 0.41, 0.91, 113.12, 95.4)"
-                                                        font-size="10" font-family="new-rubrik-edge"
-                                                        font-weight="600">a</text><text
-                                                        transform="translate(118.08 93.17) rotate(-19.58)"
-                                                        font-size="10" font-family="new-rubrik-edge"
-                                                        font-weight="600">r</text><text
-                                                        transform="translate(121.61 91.87) rotate(-14.71)"
-                                                        font-size="10" font-family="new-rubrik-edge"
-                                                        font-weight="600">e</text><text
-                                                        transform="translate(41.08 131.57) rotate(-77.69)"
-                                                        font-size="16" font-family="new-rubrik-edge"
-                                                        font-weight="600">S</text><text
-                                                        transform="matrix(0.31, -0.95, 0.95, 0.31, 43.19, 121.91)"
-                                                        font-size="16" font-family="new-rubrik-edge"
-                                                        font-weight="600">o</text><text
-                                                        transform="translate(46.08 113.13) rotate(-67.5)" font-size="16"
-                                                        font-family="new-rubrik-edge" font-weight="600">f</text><text
-                                                        transform="translate(48.62 106.99) rotate(-63.68)"
-                                                        font-size="16" font-family="new-rubrik-edge"
-                                                        font-weight="600">t</text><text
-                                                        transform="translate(51.36 101.07) rotate(-58.1)" font-size="16"
-                                                        font-family="new-rubrik-edge" font-weight="600">w</text><text
-                                                        transform="translate(58.2 90.27) rotate(-51.83)" font-size="16"
-                                                        font-family="new-rubrik-edge" font-weight="600">a</text><text
-                                                        transform="translate(63.63 83.43) rotate(-47.46)" font-size="16"
-                                                        font-family="new-rubrik-edge" font-weight="600">r</text><text
-                                                        transform="matrix(0.73, -0.68, 0.68, 0.73, 67.67, 78.93)"
-                                                        font-size="16" font-family="new-rubrik-edge"
-                                                        font-weight="600">e</text>
-                                                </g>
-                                                <g class="Circle-group Circle-group--hardware" data-group="hardware">
-                                                    <polygon
-                                                        points="140.28 12.54 137.09 122.62 169.9 152.18 168.09 161.99 250.48 205.13 265.66 138.16 245.17 72.46 208.15 36.75 160.3 16.73 140.28 12.54"
-                                                        fill="#cff0f3"></polygon>
-                                                    <path
-                                                        d="M259.12,198.06l-9.17-4A125,125,0,0,0,197.47,36a123.6,123.6,0,0,0-57-16.59h-.39l.37-10-.2,5,.23-5,.42,0A135.21,135.21,0,0,1,259.12,198.06Z"
-                                                        fill="#00adbd"></path>
-                                                    <polygon
-                                                        points="250.48 205.13 245.65 191.98 240.82 178.83 257.81 185.02 274.8 191.22 262.64 198.17 250.48 205.13"
-                                                        fill="#00adbd"></polygon>
-                                                    <path
-                                                        d="M207.55,174.07l-9.18-4A67.63,67.63,0,0,0,170,84.52a66.87,66.87,0,0,0-30.82-9h-.21l.35-10,.31,0a77.75,77.75,0,0,1,68,108.51Z"
-                                                        fill="#00adbd"></path>
-                                                    <polygon
-                                                        points="199.86 178.47 197.16 171.12 194.47 163.78 203.96 167.24 213.45 170.7 206.66 174.58 199.86 178.47"
-                                                        fill="#00adbd"></polygon><text
-                                                        transform="translate(157.02 95.47) rotate(26.2)" font-size="10"
-                                                        font-family="new-rubrik-edge" font-weight="600">B</text><text
-                                                        transform="matrix(0.84, 0.54, -0.54, 0.84, 162.77, 98.29)"
-                                                        font-size="10" font-family="new-rubrik-edge"
-                                                        font-weight="600">Y</text><text
-                                                        transform="translate(168.13 101.71) rotate(40.09)"
-                                                        font-size="10" font-family="new-rubrik-edge"
-                                                        font-weight="600">O</text><text
-                                                        transform="matrix(0.67, 0.74, -0.74, 0.67, 173.56, 106.26)"
-                                                        font-size="10" font-family="new-rubrik-edge"
-                                                        font-weight="600">D</text><text
-                                                        transform="matrix(0.3, 0.96, -0.96, 0.3, 186.8, 126.24)"
-                                                        font-size="10" font-family="new-rubrik-edge"
-                                                        font-weight="600">A</text><text
-                                                        transform="translate(188.78 132.77) rotate(79.16)"
-                                                        font-size="10" font-family="new-rubrik-edge"
-                                                        font-weight="600">z</text><text
-                                                        transform="translate(189.74 137.61) rotate(84.87)"
-                                                        font-size="10" font-family="new-rubrik-edge"
-                                                        font-weight="600">u</text><text
-                                                        transform="translate(190.22 143.49) rotate(90.01)"
-                                                        font-size="10" font-family="new-rubrik-edge"
-                                                        font-weight="600">r</text><text
-                                                        transform="matrix(-0.09, 1, -1, -0.09, 190.27, 147.26)"
-                                                        font-size="10" font-family="new-rubrik-edge"
-                                                        font-weight="600">e</text><text
-                                                        transform="matrix(0.78, 0.63, -0.63, 0.78, 191.86, 65.17)"
-                                                        font-size="16" font-family="new-rubrik-edge"
-                                                        font-weight="600">H</text><text
-                                                        transform="translate(200.95 72.57) rotate(44.76)" font-size="16"
-                                                        font-family="new-rubrik-edge" font-weight="600">a</text><text
-                                                        transform="matrix(0.66, 0.76, -0.76, 0.66, 207.13, 78.75)"
-                                                        font-size="16" font-family="new-rubrik-edge"
-                                                        font-weight="600">r</text><text
-                                                        transform="matrix(0.6, 0.8, -0.8, 0.6, 211.14, 83.27)"
-                                                        font-size="16" font-family="new-rubrik-edge"
-                                                        font-weight="600">d</text><text
-                                                        transform="matrix(0.5, 0.86, -0.86, 0.5, 216.77, 90.68)"
-                                                        font-size="16" font-family="new-rubrik-edge"
-                                                        font-weight="600">w</text><text
-                                                        transform="translate(223.1 101.78) rotate(66.14)" font-size="16"
-                                                        font-family="new-rubrik-edge" font-weight="600">a</text><text
-                                                        transform="translate(226.59 109.76) rotate(70.5)" font-size="16"
-                                                        font-family="new-rubrik-edge" font-weight="600">r</text><text
-                                                        transform="translate(228.67 115.47) rotate(74.89)"
-                                                        font-size="16" font-family="new-rubrik-edge"
-                                                        font-weight="600">e</text>
-                                                </g>
-                                                <g class="Circle-group Circle-group--learning" data-group="learning">
-                                                    <polygon
-                                                        points="109.64 166.89 24.87 213.75 68.08 255.7 117.89 273.14 174.38 270.25 224.51 238.78 248.09 215.8 153.09 163.78 109.64 166.89"
-                                                        fill="#fbe2d6"></polygon>
-                                                    <polygon
-                                                        points="24.87 213.75 38.68 216.15 52.48 218.54 38.62 230.16 24.76 241.77 24.82 227.76 24.87 213.75"
-                                                        fill="#eb6624"></polygon>
-                                                    <polygon
-                                                        points="76.61 185.29 84.33 186.62 92.04 187.96 84.3 194.45 76.55 200.94 76.58 193.11 76.61 185.29"
-                                                        fill="#eb6624"></polygon>
-                                                    <path
-                                                        d="M240.24,212.12a125.19,125.19,0,0,1-205.53,6.7l-8,6a135.18,135.18,0,0,0,222.42-7.93Z"
-                                                        fill="#eb6624"></path>
-                                                    <path
-                                                        d="M189.53,185.13a75.26,75.26,0,0,1-19.34,16.54A67.75,67.75,0,0,1,86.37,188.9L79,195.66a77.9,77.9,0,0,0,45.09,24.17,76.81,76.81,0,0,0,12.1,1,78,78,0,0,0,39-10.47,84.11,84.11,0,0,0,23.31-20.41Z"
-                                                        fill="#eb6624"></path><text
-                                                        transform="translate(94.26 178.73) rotate(48.8)" font-size="10"
-                                                        font-family="new-rubrik-edge" font-weight="600">S</text><text
-                                                        transform="matrix(0.72, 0.69, -0.69, 0.72, 98.73, 183.7)"
-                                                        font-size="10" font-family="new-rubrik-edge"
-                                                        font-weight="600">i</text><text
-                                                        transform="matrix(0.78, 0.62, -0.62, 0.78, 101.01, 185.94)"
-                                                        font-size="10" font-family="new-rubrik-edge"
-                                                        font-weight="600">g</text><text
-                                                        transform="translate(106.15 190) rotate(31.65)" font-size="10"
-                                                        font-family="new-rubrik-edge" font-weight="600">n</text><text
-                                                        transform="translate(111.78 193.43) rotate(24.69)"
-                                                        font-size="10" font-family="new-rubrik-edge"
-                                                        font-weight="600">p</text><text
-                                                        transform="matrix(0.95, 0.31, -0.31, 0.95, 117.62, 196.08)"
-                                                        font-size="10" font-family="new-rubrik-edge"
-                                                        font-weight="600">o</text><text
-                                                        transform="matrix(0.98, 0.2, -0.2, 0.98, 123.8, 198.02)"
-                                                        font-size="10" font-family="new-rubrik-edge"
-                                                        font-weight="600">s</text><text
-                                                        transform="translate(129.08 199.06) rotate(6.19)" font-size="10"
-                                                        font-family="new-rubrik-edge" font-weight="600">t</text><text
-                                                        transform="translate(136.63 199.75) rotate(-3.79)"
-                                                        font-size="10" font-family="new-rubrik-edge"
-                                                        font-weight="600">A</text><text
-                                                        transform="translate(143.99 199.23) rotate(-10.19)"
-                                                        font-size="10" font-family="new-rubrik-edge"
-                                                        font-weight="600">c</text><text
-                                                        transform="translate(149.97 198.13) rotate(-16.66)"
-                                                        font-size="10" font-family="new-rubrik-edge"
-                                                        font-weight="600">a</text><text
-                                                        transform="matrix(0.92, -0.4, 0.4, 0.92, 155.84, 196.35)"
-                                                        font-size="10" font-family="new-rubrik-edge"
-                                                        font-weight="600">d</text><text
-                                                        transform="translate(161.81 193.72) rotate(-30.2)"
-                                                        font-size="10" font-family="new-rubrik-edge"
-                                                        font-weight="600">e</text><text
-                                                        transform="matrix(0.78, -0.62, 0.62, 0.78, 167.35, 190.56)"
-                                                        font-size="10" font-family="new-rubrik-edge"
-                                                        font-weight="600">m</text><text
-                                                        transform="matrix(0.69, -0.73, 0.73, 0.69, 174.53, 184.65)"
-                                                        font-size="10" font-family="new-rubrik-edge"
-                                                        font-weight="600">y</text><text
-                                                        transform="translate(64.99 219.41) rotate(43.15)" font-size="16"
-                                                        font-family="new-rubrik-edge" font-weight="600">E</text><text
-                                                        transform="translate(72.79 226.56) rotate(38.32)" font-size="16"
-                                                        font-family="new-rubrik-edge" font-weight="600">-</text><text
-                                                        transform="translate(77.26 230.06) rotate(35.25)" font-size="16"
-                                                        font-family="new-rubrik-edge" font-weight="600">l</text><text
-                                                        transform="matrix(0.86, 0.51, -0.51, 0.86, 81.24, 232.96)"
-                                                        font-size="16" font-family="new-rubrik-edge"
-                                                        font-weight="600">e</text><text
-                                                        transform="translate(89.69 237.98) rotate(25.25)" font-size="16"
-                                                        font-family="new-rubrik-edge" font-weight="600">a</text><text
-                                                        transform="matrix(0.94, 0.35, -0.35, 0.94, 98.35, 241.97)"
-                                                        font-size="16" font-family="new-rubrik-edge"
-                                                        font-weight="600">r</text><text
-                                                        transform="translate(104.84 244.44) rotate(15.43)"
-                                                        font-size="16" font-family="new-rubrik-edge"
-                                                        font-weight="600">n</text><text
-                                                        transform="matrix(0.98, 0.19, -0.19, 0.98, 114.7, 247.04)"
-                                                        font-size="16" font-family="new-rubrik-edge"
-                                                        font-weight="600">i</text><text
-                                                        transform="translate(119.59 248.07) rotate(6.61)" font-size="16"
-                                                        font-family="new-rubrik-edge" font-weight="600">n</text><text
-                                                        transform="matrix(1, 0.01, -0.01, 1, 129.94, 249.23)"
-                                                        font-size="16" font-family="new-rubrik-edge"
-                                                        font-weight="600">g</text><text
-                                                        transform="translate(144.64 249.02) rotate(-8.19)"
-                                                        font-size="16" font-family="new-rubrik-edge"
-                                                        font-weight="600">P</text><text
-                                                        transform="translate(155.45 247.32) rotate(-12.85)"
-                                                        font-size="16" font-family="new-rubrik-edge"
-                                                        font-weight="600">l</text><text
-                                                        transform="translate(160.24 246.29) rotate(-17.06)"
-                                                        font-size="16" font-family="new-rubrik-edge"
-                                                        font-weight="600">a</text><text
-                                                        transform="matrix(0.93, -0.38, 0.38, 0.93, 169.35, 243.42)"
-                                                        font-size="16" font-family="new-rubrik-edge"
-                                                        font-weight="600">t</text><text
-                                                        transform="translate(176.21 240.61) rotate(-26.39)"
-                                                        font-size="16" font-family="new-rubrik-edge"
-                                                        font-weight="600">f</text><text
-                                                        transform="matrix(0.85, -0.52, 0.52, 0.85, 182.53, 237.53)"
-                                                        font-size="16" font-family="new-rubrik-edge"
-                                                        font-weight="600">o</text><text
-                                                        transform="matrix(0.81, -0.59, 0.59, 0.81, 191.12, 232.19)"
-                                                        font-size="16" font-family="new-rubrik-edge"
-                                                        font-weight="600">r</text><text
-                                                        transform="matrix(0.74, -0.68, 0.68, 0.74, 196.95, 228.12)"
-                                                        font-size="16" font-family="new-rubrik-edge"
-                                                        font-weight="600">m</text>
-                                                </g>
-                                            </svg></div>
-                                        <div class="Circle-logo"><svg class="Circle-svg-logo"
-                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 73.21 64.74">
-                                                <path
-                                                    d="M57.08,0,45.84,13.25H26.18a7.54,7.54,0,0,0-4.94,1.38A4.25,4.25,0,0,0,19.59,18,3.38,3.38,0,0,0,21,20.62c.89.8,3,1.54,6.3,2.23q12.29,2.67,17.6,5.37A18.53,18.53,0,0,1,52.6,35a17,17,0,0,1,2.42,9,19.2,19.2,0,0,1-3.23,10.77,20.09,20.09,0,0,1-9,7.48Q37,64.74,28.17,64.74q-15.47,0-21.43-6A23.58,23.58,0,0,1,0,43.61L17.82,42.5a13.56,13.56,0,0,0,2.37,6.62,9.84,9.84,0,0,0,8.26,3.69,9.2,9.2,0,0,0,6.19-1.88,5.43,5.43,0,0,0,.11-8.6q-2.07-1.86-9.61-3.52Q12.81,36,7.56,31.43a14.83,14.83,0,0,1-5.3-11.72A15.89,15.89,0,0,1,5,10.86c1.81-2.78,4.74-6.14,8.36-7.73A35.19,35.19,0,0,1,28,0Z"
-                                                    fill="#000"></path>
-                                                <path d="M62,0,50.77,13.25H62L73.21,0Z" fill="#00adbd"></path>
-                                            </svg></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="Grid-cell u-size1of2 u-md-sizeFull u-sm-sizeFull u-xs-sizeFull">
-                                <div class="Services">
-                                    <div class="Service-item" data-target="software">
-                                        <div class="Service-logo"><svg xmlns="http://www.w3.org/2000/svg"
-                                                viewBox="0 0 150.58 41.01">
-                                                <path
-                                                    d="M56.44,15.63a9,9,0,0,1-4.91,1.26c-3.38,0-4.91-1.84-4.91-4,0-2,1.36-3.78,4.64-3.78a9.59,9.59,0,0,1,2.7.36V8.59c0-1.18-.57-1.8-2.17-1.8a6.94,6.94,0,0,0-2.2.41,4,4,0,0,1-.93.24c-.27,0-.42-.13-.79-1a3.31,3.31,0,0,1-.38-1.1c0-.26.19-.48,1-.78A9.06,9.06,0,0,1,51.79,4C55.18,4,57,5.41,57,8.69v5.84A1.1,1.1,0,0,1,56.44,15.63ZM54,13.72V11.57a7.65,7.65,0,0,0-2.28-.36c-1.4,0-2.06.71-2.06,1.58,0,1.06.83,1.57,2.09,1.57A4.13,4.13,0,0,0,54,13.72Z"
-                                                    fill="#8dc155"></path>
-                                                <path
-                                                    d="M70.4,6.82a3.18,3.18,0,0,1,.25,1c0,.36-.3.45-1.1.73A5.71,5.71,0,0,1,68.27,9c-.29,0-.34-.28-.57-.68A2.39,2.39,0,0,0,65.42,7a2.29,2.29,0,0,0-2.48,2.19,16.33,16.33,0,0,0,0,2.32,2.34,2.34,0,0,0,2.48,2.34,2.38,2.38,0,0,0,2.29-1.35c.18-.31.28-.67.58-.67a3.82,3.82,0,0,1,1.22.34c1,.38,1.19.47,1.19.78a3.31,3.31,0,0,1-.32,1.11c-.48,1.07-1.82,2.83-5,2.83A5.35,5.35,0,0,1,59.8,12a23.79,23.79,0,0,1,0-3.27C60,5.92,62.3,4,65.41,4S70,5.67,70.4,6.82Z"
-                                                    fill="#8dc155"></path>
-                                                <path
-                                                    d="M82.41,15.63a9,9,0,0,1-4.91,1.26c-3.38,0-4.91-1.84-4.91-4,0-2,1.36-3.78,4.65-3.78a9.7,9.7,0,0,1,2.7.36V8.59c0-1.18-.57-1.8-2.18-1.8a6.94,6.94,0,0,0-2.2.41,4,4,0,0,1-.93.24c-.27,0-.42-.13-.79-1a3.31,3.31,0,0,1-.38-1.1c0-.26.19-.48,1-.78A9.06,9.06,0,0,1,77.76,4C81.15,4,83,5.41,83,8.69v5.84A1.08,1.08,0,0,1,82.41,15.63Zm-2.47-1.91V11.57a7.77,7.77,0,0,0-2.29-.36c-1.4,0-2.06.71-2.06,1.58,0,1.06.83,1.57,2.09,1.57A4.2,4.2,0,0,0,79.94,13.72Z"
-                                                    fill="#8dc155"></path>
-                                                <path
-                                                    d="M90.87,4a7.54,7.54,0,0,1,2.7.54V1.64C93.57,0,93.57,0,95.16,0s1.6,0,1.6,1.64v12.7a1.18,1.18,0,0,1-.56,1.11,9.06,9.06,0,0,1-4.91,1.44A5.16,5.16,0,0,1,85.77,12a22.72,22.72,0,0,1,0-3.3C86,5.82,87.78,4,90.87,4Zm.49,9.83a4.25,4.25,0,0,0,2.21-.71V7.6a5,5,0,0,0-2.4-.6,2,2,0,0,0-2.24,2.17,18.42,18.42,0,0,0,0,2.35A2.2,2.2,0,0,0,91.36,13.79Z"
-                                                    fill="#8dc155"></path>
-                                                <path
-                                                    d="M109,11.58h-6.26v.23c0,1.48,1.16,2.27,2.7,2.27a6.43,6.43,0,0,0,2.41-.45,3.38,3.38,0,0,1,1-.31c.33,0,.49.24.85,1a2.56,2.56,0,0,1,.32,1c0,.24-.14.42-.81.74a9.35,9.35,0,0,1-3.7.79c-3.38,0-5.48-2.07-5.74-5a25.25,25.25,0,0,1,0-3A5.18,5.18,0,0,1,105.21,4a5.06,5.06,0,0,1,5.36,5.39V10C110.57,11.42,110.32,11.58,109,11.58Zm-1.3-2.45a2.29,2.29,0,0,0-2.44-2.54c-1.74,0-2.53,1.12-2.52,2.83h4.69C107.69,9.42,107.69,9.42,107.69,9.13Z"
-                                                    fill="#8dc155"></path>
-                                                <path
-                                                    d="M130.21,9v6.16c0,1.55,0,1.55-1.59,1.55s-1.59,0-1.59-1.55v-6c0-1.37-.53-2.06-1.85-2.06a3.08,3.08,0,0,0-1.86.69c0,.41.06.83.06,1.29v6.06c0,1.55,0,1.55-1.6,1.55s-1.58,0-1.58-1.55v-6c0-1.39-.63-2-1.87-2a3.68,3.68,0,0,0-1.8.57v7.47c0,1.55,0,1.55-1.6,1.55s-1.58,0-1.58-1.55V6.37a1.22,1.22,0,0,1,.55-1.14A8.43,8.43,0,0,1,118.2,4a4.41,4.41,0,0,1,3.35,1.29A6.7,6.7,0,0,1,125.38,4C128.79,4,130.21,5.78,130.21,9Z"
-                                                    fill="#8dc155"></path>
-                                                <path
-                                                    d="M136.63,5.81v9.33c0,1.53,0,1.53-1.61,1.53s-1.57,0-1.57-1.53V5.81c0-1.63,0-1.63,1.57-1.63S136.63,4.18,136.63,5.81Z"
-                                                    fill="#8dc155"></path>
-                                                <path
-                                                    d="M150.28,6.82a3.13,3.13,0,0,1,.24,1c0,.36-.29.45-1.09.73a5.71,5.71,0,0,1-1.28.39c-.29,0-.34-.28-.57-.68A2.39,2.39,0,0,0,145.3,7a2.29,2.29,0,0,0-2.48,2.19,16.33,16.33,0,0,0,0,2.32,2.34,2.34,0,0,0,2.48,2.34,2.38,2.38,0,0,0,2.29-1.35c.18-.31.28-.67.58-.67a3.73,3.73,0,0,1,1.21.34c1,.38,1.2.47,1.2.78a3.57,3.57,0,0,1-.32,1.11c-.48,1.07-1.82,2.83-5,2.83a5.35,5.35,0,0,1-5.53-4.9,23.79,23.79,0,0,1,0-3.27c.17-2.8,2.5-4.76,5.61-4.76S149.86,5.67,150.28,6.82Z"
-                                                    fill="#8dc155"></path>
-                                                <path
-                                                    d="M55.35,26.62c.38.31.51.5.51.73s-.1.41-.6,1.06-.63.79-.92.79-.46-.16-.91-.38a4.26,4.26,0,0,0-1.92-.48c-1.14,0-1.68.42-1.68,1.05s.38.79,1.4,1c.52.12,1.22.26,1.57.35,2.41.58,3.55,1.72,3.55,3.71,0,2.48-2.18,4-4.84,4A7.28,7.28,0,0,1,47,37.1c-.34-.26-.59-.48-.59-.77s.07-.36.57-1,.68-.83,1-.83a1.85,1.85,0,0,1,.81.39,5,5,0,0,0,2.78.79c1.19,0,1.74-.48,1.74-1.12s-.36-.84-1.34-1.08l-1.77-.4c-1.85-.46-3.35-1.56-3.35-3.62,0-2.48,2.14-3.93,4.85-3.93A6.08,6.08,0,0,1,55.35,26.62Z"
-                                                    fill="#8dc155"></path>
-                                                <path
-                                                    d="M69.74,30.32a20.45,20.45,0,0,1,0,3.32,5.66,5.66,0,0,1-11.19,0,20.08,20.08,0,0,1,0-3.29,5.66,5.66,0,0,1,11.19,0Zm-8,.49a18.11,18.11,0,0,0,0,2.33,2.46,2.46,0,0,0,4.91,0,18,18,0,0,0,0-2.32,2.46,2.46,0,0,0-4.91,0Z"
-                                                    fill="#8dc155"></path>
-                                                <path
-                                                    d="M77.7,21.32a8.3,8.3,0,0,1,2.34.35c.95.34,1.27.52,1.27.83A3,3,0,0,1,81,23.59c-.32.68-.41,1-.81,1a2.69,2.69,0,0,1-.79-.17A4.53,4.53,0,0,0,78,24.19c-.86,0-1.29.57-1.29,1.55v.64h2.67c1.45,0,1.45,0,1.45,1.42s0,1.38-1.45,1.38H76.72v7.49c0,1.55,0,1.55-1.59,1.55s-1.6,0-1.6-1.55V29.18H73c-1.47,0-1.47,0-1.47-1.38s0-1.42,1.47-1.42h.54v-.75C73.53,22.78,75.17,21.32,77.7,21.32Z"
-                                                    fill="#8dc155"></path>
-                                                <path
-                                                    d="M87.23,38.45c-2.89,0-4.22-2-4.22-4.61V24.32c0-1.67,0-1.67,1.57-1.67s1.61,0,1.61,1.67v1.42H89c1.5,0,1.5.05,1.5,1.47s0,1.42-1.5,1.42H86.19v5.16c0,1.13.49,1.71,1.52,1.71a5.29,5.29,0,0,0,1.44-.24,3.36,3.36,0,0,1,.81-.18c.37,0,.49.3.77,1.07a3,3,0,0,1,.28,1c0,.25-.2.44-.74.66A7.43,7.43,0,0,1,87.23,38.45Z"
-                                                    fill="#8dc155"></path>
-                                                <path
-                                                    d="M109,25.86c1,.24,1.2.36,1.2.73a10.13,10.13,0,0,1-.26,1.47l-2.18,8.57c-.38,1.59-.38,1.59-2.46,1.59s-2.19,0-2.52-1.59l-1.53-6.9c0-.07-.07-.1-.12-.1a.13.13,0,0,0-.13.1l-1.58,6.9c-.33,1.59-.33,1.59-2.57,1.59-2,0-2,0-2.38-1.59L92.26,28.1A12.91,12.91,0,0,1,92,26.63c0-.48.16-.6,1.2-.81a6.86,6.86,0,0,1,1.23-.15c.54,0,.64.25.79.93.71,3.19,1.22,5.63,1.74,8.52a.11.11,0,0,0,.12.1.13.13,0,0,0,.13-.1c.53-2.7,1.08-5.57,1.68-8,.38-1.48.38-1.48,2.19-1.48s1.89,0,2.25,1.48c.78,3.19,1.15,5.22,1.73,8,0,.07.06.1.12.1a.13.13,0,0,0,.13-.1c.48-2.77,1.09-5.74,1.71-8.52.13-.63.21-.93.7-.93A6.23,6.23,0,0,1,109,25.86Z"
-                                                    fill="#8dc155"></path>
-                                                <path
-                                                    d="M121.53,37.19a9,9,0,0,1-4.91,1.26c-3.39,0-4.92-1.84-4.92-4,0-2,1.37-3.78,4.65-3.78a9.34,9.34,0,0,1,2.7.36v-.85c0-1.18-.57-1.81-2.18-1.81a7,7,0,0,0-2.2.42,3.46,3.46,0,0,1-.93.23c-.27,0-.42-.12-.79-1a3.25,3.25,0,0,1-.37-1.11c0-.25.18-.47,1-.78a9.27,9.27,0,0,1,3.33-.63c3.39,0,5.22,1.46,5.22,4.74v5.83A1.11,1.11,0,0,1,121.53,37.19Zm-2.48-1.91V33.13a7.39,7.39,0,0,0-2.28-.36c-1.41,0-2.06.71-2.06,1.58,0,1.06.82,1.57,2.08,1.57A4.2,4.2,0,0,0,119.05,35.28Z"
-                                                    fill="#8dc155"></path>
-                                                <path
-                                                    d="M132.81,26.63a4.87,4.87,0,0,1-.27,1.18c-.26.85-.38,1.1-.83,1.1a3.86,3.86,0,0,1-.82-.14,4.68,4.68,0,0,0-1.13-.14c-.86,0-1.33.42-1.33,1.48v6.62c0,1.49,0,1.49-1.58,1.49s-1.61,0-1.61-1.49V29.51c0-2.45,1.42-4,4.11-4a9.59,9.59,0,0,1,2.41.32C132.41,26,132.81,26.19,132.81,26.63Z"
-                                                    fill="#8dc155"></path>
-                                                <path
-                                                    d="M143.47,33.14h-6.26v.23c0,1.48,1.16,2.27,2.7,2.27a6.43,6.43,0,0,0,2.41-.45,3.16,3.16,0,0,1,1-.32c.33,0,.49.25.85,1.06a2.56,2.56,0,0,1,.32,1c0,.23-.14.42-.81.73a9.16,9.16,0,0,1-3.7.8c-3.39,0-5.48-2.08-5.74-5a25.23,25.23,0,0,1,0-3,5.19,5.19,0,0,1,5.48-4.95,5.06,5.06,0,0,1,5.36,5.39v.61C145.05,33,144.8,33.14,143.47,33.14Zm-1.3-2.46a2.29,2.29,0,0,0-2.44-2.53c-1.74,0-2.53,1.11-2.52,2.82h4.69C142.17,31,142.17,31,142.17,30.68Z"
-                                                    fill="#8dc155"></path>
-                                                <rect y="2.44" width="38.57" height="38.57" rx="4.13" fill="#1d1d1b">
-                                                </rect>
-                                                <path
-                                                    d="M27.66,10.38,23.71,15h-6.9a2.68,2.68,0,0,0-1.73.48,1.48,1.48,0,0,0-.58,1.19,1.17,1.17,0,0,0,.48.91,5.53,5.53,0,0,0,2.21.79,27.54,27.54,0,0,1,6.18,1.88,6.5,6.5,0,0,1,2.71,2.36,6,6,0,0,1,.85,3.16,6.75,6.75,0,0,1-1.13,3.78,7.11,7.11,0,0,1-3.16,2.62,12.93,12.93,0,0,1-5.13.89c-3.62,0-6.13-.69-7.52-2.09a8.27,8.27,0,0,1-2.36-5.32l6.25-.39a4.83,4.83,0,0,0,.83,2.33,3.46,3.46,0,0,0,2.9,1.29,3.22,3.22,0,0,0,2.17-.66,1.91,1.91,0,0,0,0-3A8.24,8.24,0,0,0,16.45,24a14.36,14.36,0,0,1-6.17-2.59,5.22,5.22,0,0,1-1.86-4.12,5.61,5.61,0,0,1,.95-3.1,7.4,7.4,0,0,1,2.94-2.72,12.44,12.44,0,0,1,5.13-1.09Z"
-                                                    fill="#fff"></path>
-                                                <path d="M29.39,10.38,25.44,15h4l4-4.65Z" fill="#8dc155"></path>
-                                            </svg></div>
-                                        <div class="Service-text">
-                                            <p>Academic Software is een allesomvattend softwareplatform dat toegang
-                                                biedt tot hoogwaardige software en platformen via uw schoolaccount.</p>
-                                        </div>
-                                    </div>
-                                    <div class="Service-item" data-target="hardware">
-                                        <div class="Service-logo"><svg xmlns="http://www.w3.org/2000/svg"
-                                                viewBox="0 0 145.45 41.12">
-                                                <path
-                                                    d="M27.48,0,23.23,5H9.91A2.86,2.86,0,0,0,8,5.54a1.6,1.6,0,0,0-.63,1.28,1.27,1.27,0,0,0,.53,1,5.61,5.61,0,0,0,2.38.85,30,30,0,0,1,6.66,2,7.08,7.08,0,0,1,2.93,2.55,6.47,6.47,0,0,1,.92,3.4,7.29,7.29,0,0,1-1.23,4.08,7.63,7.63,0,0,1-3.41,2.83,13.82,13.82,0,0,1-5.53,1c-3.9,0-6.61-.75-8.11-2.25A9,9,0,0,1,0,16.51l6.75-.42a5.06,5.06,0,0,0,.89,2.5A3.72,3.72,0,0,0,10.77,20a3.5,3.5,0,0,0,2.34-.71,2.06,2.06,0,0,0,0-3.26,9.07,9.07,0,0,0-3.63-1.33q-4.68-1-6.66-2.79a5.6,5.6,0,0,1-2-4.44,6.07,6.07,0,0,1,1-3.35A8,8,0,0,1,5.05,1.18,13.3,13.3,0,0,1,10.58,0Z"
-                                                    fill="#1d1e1b"></path>
-                                                <rect x="23.38" y="5.07" width="6.37" height="19.03" fill="#1d1e1b">
-                                                </rect>
-                                                <path
-                                                    d="M44.57,7.46h6V23.17l0,.74a7.05,7.05,0,0,1-.67,3,6.18,6.18,0,0,1-1.77,2.29,6.88,6.88,0,0,1-2.81,1.27,17.47,17.47,0,0,1-3.89.39c-3.35,0-5.64-.5-6.89-1.5a4.88,4.88,0,0,1-1.87-4c0-.21,0-.49,0-.85l6.19.71a2,2,0,0,0,.72,1.19,3.08,3.08,0,0,0,1.77.48,2.68,2.68,0,0,0,2.06-.73,3.81,3.81,0,0,0,.68-2.57V21a6.22,6.22,0,0,1-5.06,2.41,6.3,6.3,0,0,1-5.39-2.92,9.25,9.25,0,0,1-1.46-5.47,8.41,8.41,0,0,1,1.88-5.93,6.37,6.37,0,0,1,4.92-2,6.87,6.87,0,0,1,3.2.66,6.93,6.93,0,0,1,2.36,2.18Zm-6,8.06a4,4,0,0,0,.77,2.68,2.55,2.55,0,0,0,2,.87,2.57,2.57,0,0,0,2-.9,4,4,0,0,0,.8-2.72,4.13,4.13,0,0,0-.84-2.79,2.64,2.64,0,0,0-2.07-1,2.35,2.35,0,0,0-1.94.89,4.59,4.59,0,0,0-.73,2.93"
-                                                    fill="#1d1e1b"></path>
-                                                <path
-                                                    d="M53.55,7.46h5.93v2.71a8.92,8.92,0,0,1,2.7-2.38,7.19,7.19,0,0,1,3.33-.71,5.45,5.45,0,0,1,4.15,1.57,6.88,6.88,0,0,1,1.5,4.87V24.1H64.74V14.94a3.34,3.34,0,0,0-.58-2.22,2.07,2.07,0,0,0-1.63-.65,2.31,2.31,0,0,0-1.88.88,5.07,5.07,0,0,0-.73,3.16v8H53.55Z"
-                                                    fill="#1d1e1b"></path>
-                                                <path
-                                                    d="M74.16,34V7.46h6V9.91A7.92,7.92,0,0,1,82.4,7.82a6.5,6.5,0,0,1,3.09-.74,6,6,0,0,1,5.16,2.56A10.56,10.56,0,0,1,92.48,16c0,2.77-.67,4.89-2,6.34a6.49,6.49,0,0,1-5,2.19,6.89,6.89,0,0,1-2.69-.5,6.34,6.34,0,0,1-2.17-1.49v3.69Zm6.38-18.22a4.37,4.37,0,0,0,.84,2.94,2.65,2.65,0,0,0,2.1,1,2.32,2.32,0,0,0,1.87-.92,5,5,0,0,0,.76-3.12,4.63,4.63,0,0,0-.79-3,2.4,2.4,0,0,0-1.92-1,2.59,2.59,0,0,0-2,1,4.77,4.77,0,0,0-.82,3.1"
-                                                    fill="#1d1e1b"></path>
-                                                <path
-                                                    d="M93.91,15.83a8.35,8.35,0,0,1,2.57-6.28,9.58,9.58,0,0,1,6.94-2.47q5,0,7.55,2.9a8.41,8.41,0,0,1,2,5.76A8.38,8.38,0,0,1,110.48,22a9.74,9.74,0,0,1-7,2.45,9.92,9.92,0,0,1-6.49-2,8.19,8.19,0,0,1-3-6.62m6.39,0a5,5,0,0,0,.9,3.29,2.95,2.95,0,0,0,4.53,0,5.24,5.24,0,0,0,.88-3.38,4.87,4.87,0,0,0-.89-3.22,2.76,2.76,0,0,0-2.21-1.06,2.86,2.86,0,0,0-2.3,1.07,5,5,0,0,0-.91,3.28"
-                                                    fill="#1d1e1b"></path>
-                                                <path
-                                                    d="M114.29,18.93l6.16-.05a3.09,3.09,0,0,0,1.1,1.62,3.2,3.2,0,0,0,1.88.49,3.16,3.16,0,0,0,2-.55,1.21,1.21,0,0,0,.55-1,1.17,1.17,0,0,0-.72-1.07,12.78,12.78,0,0,0-2.74-.66,30.67,30.67,0,0,1-4.62-1.07A4.89,4.89,0,0,1,115.72,15a4.34,4.34,0,0,1-.89-2.68,4.37,4.37,0,0,1,1-2.83,5.63,5.63,0,0,1,2.63-1.78,14,14,0,0,1,4.5-.59,15.66,15.66,0,0,1,4.39.45,5.82,5.82,0,0,1,2.36,1.41,11,11,0,0,1,1.54,3.22l-6-.05a2,2,0,0,0-.78-1.17,3.21,3.21,0,0,0-1.81-.5,2.51,2.51,0,0,0-1.57.39,1.12,1.12,0,0,0-.49.93,1,1,0,0,0,.62.92,10.17,10.17,0,0,0,2.73.57,19,19,0,0,1,4.73,1A5.21,5.21,0,0,1,131,16.08a4.52,4.52,0,0,1,.82,2.62,5.09,5.09,0,0,1-.87,2.81,5.87,5.87,0,0,1-2.74,2.16,13.13,13.13,0,0,1-5.1.81c-3,0-4.8-.46-6.09-1.33a7.41,7.41,0,0,1-2.72-4.22"
-                                                    fill="#1d1e1b"></path>
-                                                <path
-                                                    d="M141.72,2.37V7.46h3.51v4.67h-3.51V18a3.1,3.1,0,0,0,.21,1.41A1.16,1.16,0,0,0,143,20l2.41,0,0,4.24a19.79,19.79,0,0,1-4.4.24,7.64,7.64,0,0,1-3.51-.61A3.69,3.69,0,0,1,135.87,22a10.94,10.94,0,0,1-.54-4V12.13H133V7.46h2.34l0-6.4Z"
-                                                    fill="#1d1e1b"></path>
-                                                <polygon
-                                                    points="74.16 41.13 80.59 33.26 80.59 28.55 74.16 36.41 74.16 41.13"
-                                                    fill="#00adbd"></polygon>
-                                            </svg></div>
-                                        <div class="Service-text">
-                                            <p>Bij Signpost kunt u terecht voor zowel allesomvattende laptopprojecten,
-                                                als voor andere hardware- en Cloud-oplossingen.</p>
-                                        </div>
-                                    </div>
-                                    <div class="Service-item" data-target="learning">
-                                        <div class="Service-logo"></div>
-                                        <div class="Service-text">
-                                            <p>Alles wat met een klassiek schoolboek kan, verrijkt met digitale
-                                                mogelijkheden om leerstof flexibel, interactief, visueel aantrekkelijk
-                                                én gedifferentieerd te brengen.</p>
-                                        </div>
-                                    </div>
-                                </div><a href="#" class="Button Button--orange Button--outline u-marginTmd js-showModal"
-                                    data-modal="video">Bekijk video</a>
-                                <div class="Modal js-modal Modal-video" data-id="video">
-                                    <div class="Modal-inner">
-                                        <div class="Modal-innerBody">
-                                            <div class="Modal-body">
-                                                <div class="FlexEmbed FlexEmbed--16by9">
-                                                    <div class="FlexEmbed-content"><iframe
-                                                            src="https://player.vimeo.com/video/486333498?app_id=122963"
-                                                            width="1920" height="1080" frameborder="0"
-                                                            allow="autoplay; fullscreen; picture-in-picture"
-                                                            allowfullscreen=""></iframe></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section class="Block Block--columns Block--blue Block--backgroundBlue">
-                    <div class="ColumnRow ColumnRow--wide">
-                        <div class="ColumnRow-left">
-                            <h3 class="ColumnRow-title">Schrijf nu in voor onze nieuwsbrief!</h3>
-                            <div class="ColumnRow-body u-lastChildren">
-                                <p>Blijf op de hoogte van de laatste innovaties in digitaal onderwijs, onze
-                                    opleidingskalender en acties. Schrijf u nu in voor onze maandelijkse nieuwsbrief!
-                                </p><a class="Button Button--orange" href="https://signpost.nl/nl-be/nieuwsbrief">
-                                    Schrijf nu in!&#xFEFF;</a>
-                            </div>
-                        </div>
-                        <div class="ColumnRow-right"></div>
-                    </div>
-                </section>
-                <section class="Block Block--columns Block--blue Block--backgroundBlue">
-                    <div class="ColumnRow ColumnRow--wide ColumnRow--hideLogo">
-                        <div class="ColumnRow-left">
-                            <h3 class="ColumnRow-title">Nieuwe partner: onderwijsdesignbureau domo de refontiro</h3>
-                            <div class="ColumnRow-body u-lastChildren">
-                                <p>Het afgelopen jaar evolueerde de manier waarop leerinhouden worden aangeboden en zien
-                                    we een verschuiving naar meer digitale leermiddelen. De aangekondigde ‘Digisprong’
-                                    lijkt dit proces te versnellen. Om een school te digitaliseren, is meer nodig dan
-                                    online lessen of een laptop voor alle leerlingen.</p>
-                                <p>Daarom slaan <strong>Signpost en het onderwijsdesignbureau domo de refontiro
-                                    </strong>de handen in elkaar om u en uw scholenteam te begeleiden in dit proces met
-                                    twee specifieke opleidingen: <a
-                                        href="https://signpost.nl/nl-be/opleidingen/digitale-transformatie"><u>opleidingstraject
-                                            digitale transformatie</u></a> en <a
-                                        href="https://signpost.nl/nl-be/opleidingen/digispringen"><u>DIGIspringen in de
-                                            klas</u></a>.</p>
-                            </div>
-                        </div>
-                        <div class="ColumnRow-right">
-                            <picture class="ColumnRow-object"><img class="ColumnRow-image LazyLoaded"
-                                    src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%272126%27%20height%3D%272126%27%20style%3D%27background%3Atransparent%27%2F%3E"
-                                    height="300" alt="Logo pencilstyle transparant metschaduw" data-sizes="100vw"
-                                    data-srcset="https://signpost.nl/transforms/files/Partnerlogos/204452/logo-pencilstyle-transparant-metschaduw_c4e5561f3b7499de879a2711a54811f5.png 1920w, https://signpost.nl/transforms/files/Partnerlogos/204452/logo-pencilstyle-transparant-metschaduw_5fd53689e20318af83f8f5724838cfa0.png 1366w, https://signpost.nl/transforms/files/Partnerlogos/204452/logo-pencilstyle-transparant-metschaduw_292b6480f8890e4c2b237d4c17b16a3b.png 768w, https://signpost.nl/transforms/files/Partnerlogos/204452/logo-pencilstyle-transparant-metschaduw_9ff2139d7826ab04ba2e40c2030fd2b4.png 360w"
-                                    sizes="100vw"
-                                    srcset="https://signpost.nl/transforms/files/Partnerlogos/204452/logo-pencilstyle-transparant-metschaduw_c4e5561f3b7499de879a2711a54811f5.png 1920w, https://signpost.nl/transforms/files/Partnerlogos/204452/logo-pencilstyle-transparant-metschaduw_5fd53689e20318af83f8f5724838cfa0.png 1366w, https://signpost.nl/transforms/files/Partnerlogos/204452/logo-pencilstyle-transparant-metschaduw_292b6480f8890e4c2b237d4c17b16a3b.png 768w, https://signpost.nl/transforms/files/Partnerlogos/204452/logo-pencilstyle-transparant-metschaduw_9ff2139d7826ab04ba2e40c2030fd2b4.png 360w">
-                            </picture>
-                        </div>
-                    </div>
-                </section>
-            </main>
+            <div class="image-section">
+                <img src="./img/image1.png" alt="Current Data">
+                <img src="./img/DataProjection.png" alt="Projected Data">
+            </div>
+            <div class="graph-selection">
+                <h2>Select a Graph</h2>
+                <select id="graph-selector">
+                    <option value="graph1">Graph 1</option>
+                    <option value="graph2">Graph 2</option>
+                    <option value="graph3">Graph 3</option>
+                    <option value="graph2">Graph 4</option>
+                    <option value="graph3">Graph 5</option>
+                    <!-- Add more options as needed -->
+                </select>
+            </div>
+            <div class="graph-display">
+                <!-- Graphs will be displayed here based on user selection -->
+            </div>
         </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const graphSelector = document.getElementById("graph-selector");
+                const firstImage = document.querySelector(".image-section img:first-child");
+
+                graphSelector.addEventListener("change", function () {
+                    const selectedGraph = graphSelector.value;
+                    let imageURL = "";
+
+                    if (selectedGraph === "graph1") {
+                        imageURL = "./img/image1.png";
+                    } else if (selectedGraph === "graph2") {
+                        imageURL = "./img/image2.png"; 
+                    } else if (selectedGraph === "graph3") {
+                        imageURL = "./img/image3.png"; 
+                    }
+                    else if (selectedGraph === "graph4") {
+                        imageURL = "./img/image4.png"; 
+                    }
+                    else if (selectedGraph === "graph5") {
+                        imageURL = "./img/image5.png"; 
+                    }
+                    firstImage.src = imageURL;
+                });
+            });
+        </script>
+
+
+
         <footer class="Footer">
             <div class="Container">
                 <div class="Footer-top"><a href="https://signpost.nl/nl-be/" class="Logo Logo--footer u-marginBmd"><svg

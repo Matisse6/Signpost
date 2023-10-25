@@ -48,12 +48,23 @@
     <script>!function (e, t) { "object" == typeof exports && "undefined" != typeof module ? t(exports) : "function" == typeof define && define.amd ? define(["exports"], t) : t(e.Cookie = e.Cookie || {}) }(this, function (e) { "use strict"; function t(e, t) { return Object.prototype.hasOwnProperty.call(e, t) } function o(e) { return e.replace(/[.*+?^$|[\](){}\\-]/g, "\\$&") } function n(e) { var t = e.charAt(e.length - 1), o = parseInt(e, 10), n = new Date; switch (t) { case "Y": n.setFullYear(n.getFullYear() + o); break; case "M": n.setMonth(n.getMonth() + o); break; case "D": n.setDate(n.getDate() + o); break; case "h": n.setHours(n.getHours() + o); break; case "m": n.setMinutes(n.getMinutes() + o); break; case "s": n.setSeconds(n.getSeconds() + o); break; default: n = new Date(e) }return n } function r(e) { var o = ""; for (var r in e) if (t(e, r)) if (/^expires$/i.test(r)) { var i = e[r]; "object" !== (void 0 === i ? "undefined" : l(i)) && (i += "number" == typeof i ? "D" : "", i = n(i)), o += ";" + r + "=" + i.toUTCString() } else /^secure$/.test(r) ? e[r] && (o += ";" + r) : o += ";" + r + "=" + e[r]; return t(e, "path") || (o += ";path=/"), o } function i() { var e = RegExp("(?:^|; )@key@=1(?:;|$)"); document.cookie = "@key@=1"; var t = e.test(document.cookie); return t && f("@key@"), t } function u(e) { var t = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : decodeURIComponent; if ("string" != typeof e || !e) return null; var n = RegExp("(?:^|; )" + o(e) + "(?:=([^;]*))?(?:;|$)"), r = n.exec(document.cookie); return null === r ? null : "function" == typeof t ? t(r[1]) : r[1] } function c() { for (var e = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : decodeURIComponent, t = /(?:^|; )([^=]+?)(?:=([^;]*))?(?:;|$)/g, o = {}, n = void 0; n = t.exec(document.cookie);)t.lastIndex = n.index + n.length - 1, o[n[1]] = "function" == typeof e ? e(n[2]) : n[2]; return o } function a(e, t) { var o = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : encodeURIComponent, n = arguments[3]; "object" === (void 0 === o ? "undefined" : l(o)) && null !== o && (n = o, o = encodeURIComponent); var i = r(n || {}), u = "function" == typeof o ? o(t) : t, c = e + "=" + u + i; document.cookie = c } function f(e, t) { var o = { expires: -1 }; return t && t.domain && (o.domain = t.domain), a(e, "a", o) } function s(e) { return u(e, null) } function d(e, t, o) { return a(e, t, null, o) } var l = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) { return typeof e } : function (e) { return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e }; e.isEnabled = i, e.get = u, e.getAll = c, e.set = a, e.getRaw = s, e.setRaw = d, e.remove = f, e.isCookieEnabled = i, e.getCookie = u, e.getAllCookies = c, e.setCookie = a, e.getRawCookie = s, e.setRawCookie = d, e.removeCookie = f, Object.defineProperty(e, "__esModule", { value: !0 }) });</script>
     <script type="text/javascript">var staticAssetsVersion = "22"; var assetsBaseUrl = "https://signpost.nl/";</script>
     <link rel="stylesheet" href="https://use.typekit.net/lpv1wbn.css">
+    <link rel="stylesheet" href="https://signpost.nl/assets/css/style.min.22.css">
+
     <style>
         [v-cloak] {
             display: none !important
         }
+
+        @media screen and (min-width: 48em) {
+            .Container {
+                max-width: 100%;
+            }
+        }
+
+        .Container {
+            max-width: 100%;
+        }
     </style>
-    <link rel="stylesheet" href="https://signpost.nl/assets/css/style.min.22.css">
     <title>Signpost | Home</title>
     <script>dataLayer = [];
         (function (w, d, s, l, i) {
@@ -340,6 +351,10 @@
                                             href="http://127.0.0.1:5500/repair.html" data-item-id="136299"><span
                                                 class="Nav-link-text">Repair</span></a>
                                     </li>
+                                    <li class="Nav-item"><a title="RepairWorker" class="Nav-link js-triggerLink"
+                                            href="http://127.0.0.1:5500/repair_worker.html" data-item-id="136299"><span
+                                                class="Nav-link-text">Repair Worker</span></a>
+                                    </li>
                                 </ul>
                             </nav>
                             <nav class="Nav Nav--lang" aria-label="Taalkeuze" aria-role="navigation"><span
@@ -398,10 +413,13 @@
                 height: 400px;
                 overflow-y: auto;
                 margin-right: 50px;
+                font-family: Arial, sans-serif;
+                width: 300px;
             }
 
             .problem-selection h2 {
                 font-size: 20px;
+                color: #333;
             }
 
             .problem-selection ul {
@@ -412,6 +430,40 @@
 
             .problem-selection li {
                 margin: 10px 0;
+            }
+
+            .problem-selection label {
+                display: block;
+                position: relative;
+                padding-left: 30px;
+                cursor: pointer;
+                font-size: 16px;
+            }
+
+            .problem-selection input[type="radio"] {
+                display: none;
+            }
+
+            .problem-selection label:before {
+                content: "";
+                display: inline-block;
+                width: 18px;
+                height: 18px;
+                border: 1px solid #333;
+                border-radius: 50%;
+                position: absolute;
+                left: 0;
+                top: 2px;
+            }
+
+            .problem-selection input[type="radio"]:checked+label:before {
+                background-color: #28acbc;
+                /* Change this color to your preferred color */
+            }
+
+            .problem-selection label:hover {
+                color: #28acbc;
+                /* Change this color to your preferred color */
             }
 
             .laptop-information {
@@ -440,7 +492,7 @@
             }
 
             .laptop-information input[type="submit"] {
-                background-color: #0077b6;
+                background-color: #28acbc;
                 color: white;
                 padding: 10px 20px;
                 border: none;
@@ -450,7 +502,7 @@
             }
 
             .laptop-information input[type="submit"]:hover {
-                background-color: #005b8a;
+                background-color: #208c94;
             }
 
             .QR-code {
@@ -502,26 +554,54 @@
                 <div class="problem-selection">
                     <h2>Select Your Laptop's Problem</h2>
                     <ul>
-                        <li><input type="checkbox" name="problem" value="Screen Repair"> Screen Repair</li>
-                        <li><input type="checkbox" name="problem" value="Battery Replacement"> Battery Replacement</li>
-                        <li><input type="checkbox" name="problem" value="Keyboard Repair"> Keyboard Repair</li>
-                        <li><input type="checkbox" name="problem" value="Software Issues"> Software Issues</li>
-                        <li><input type="checkbox" name="problem" value="Overheating"> Overheating</li>
-                        <li><input type="checkbox" name="problem" value="Hard Drive Failure"> Hard Drive Failure</li>
-                        <li><input type="checkbox" name="problem" value="Power Jack Repair"> Power Jack Repair</li>
-                        <li><input type="checkbox" name="problem" value="Data Recovery"> Data Recovery</li>
-                        <li><input type="checkbox" name="problem" value="Motherboard Repair"> Motherboard Repair</li>
-                        <li><input type="checkbox" name="problem" value="Liquid Damage"> Liquid Damage</li>
-                        <li><input type="checkbox" name="problem" value="Fan Replacement"> Fan Replacement</li>
-                        <li><input type="checkbox" name="problem" value="Bluetooth/Wi-Fi Issues"> Bluetooth/Wi-Fi Issues
+                        <li>
+                            <input type="radio" id="algemeen" name="problem" value="Algemeen" checked>
+                            <label for="algemeen">Algemeen</label>
                         </li>
-                        <li><input type="checkbox" name="problem" value="Cracked Casing"> Cracked Casing</li>
-                        <li><input type="checkbox" name="problem" value="No Display"> No Display</li>
-                        <li><input type="checkbox" name="problem" value="Touchpad/Trackpad Issues"> Touchpad/Trackpad
-                            Issues</li>
-                        <li><input type="checkbox" name="problem" value="Audio/Speaker Problems"> Audio/Speaker Problems
+                        <li>
+                            <input type="radio" id="valschade" name="problem" value="Valschade">
+                            <label for="valschade">Valschade</label>
                         </li>
-                        <li><input type="checkbox" name="problem" value="Other Issues"> Other Issues</li>
+                        <li>
+                            <input type="radio" id="beeldscherm" name="problem" value="Beeldscherm">
+                            <label for="beeldscherm">Beeldscherm</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="batterij-adapter" name="problem" value="Batterij/adapter">
+                            <label for="batterij-adapter">Batterij/adapter</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="toetsenbord" name="problem" value="Toetsenbord">
+                            <label for="toetsenbord">Toetsenbord</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="touchpad" name="problem" value="Touchpad">
+                            <label for="touchpad">Touchpad</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="wifi" name="problem" value="Wifi">
+                            <label for="wifi">Wifi</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="geluid-camera" name="problem" value="Geluid/Camera">
+                            <label for="geluid-camera">Geluid/Camera</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="harde-schijf-ssd" name="problem" value="Harde schijf/SSD">
+                            <label for="harde-schijf-ssd">Harde schijf/SSD</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="diefstal" name="problem" value="Diefstal">
+                            <label for="diefstal">Diefstal</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="bulk" name="problem" value="Bulk">
+                            <label for="bulk">Bulk</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="andere" name="problem" value="Andere" checked>
+                            <label for="andere">Andere</label>
+                        </li>
                     </ul>
                 </div>
 
@@ -540,7 +620,7 @@
 
                 <div class="laptop-information">
                     <h2>Laptop Information</h2>
-                    <form action="submit_repair_request.php" method="post">
+                    <form id="repair-form">
                         <button id="scan-qr-code-button" class="scan-qr-button"></button><br>
 
                         <label for="name">Name:</label>
@@ -555,6 +635,9 @@
                         <label for="laptop-serial">Laptop Serial Number:</label>
                         <input type="text" id="laptop-serial" name="laptop-serial" required><br>
 
+                        <label for="Beschrijving">Beschrijving:</label>
+                        <input type="text" id="Beschrijving" name="Beschrijving" required><br>
+
                         <input type="submit" value="Submit Repair Request">
                     </form>
                 </div>
@@ -565,11 +648,24 @@
             function decodeOnce(codeReader, selectedDeviceId) {
                 codeReader.decodeFromInputVideoDevice(selectedDeviceId, 'video').then((result) => {
                     console.log(result)
-                    document.getElementById('laptop-serial').value  = result.text
+                    document.getElementById('name').value = "Matisse Glorieux"
+                    document.getElementById('school').value = "Vives Kortrijk"
+                    document.getElementById('laptop-model').value = "Acer aspire 7"
+                    document.getElementById('laptop-serial').value = "694B2EFB-A7C3-4C83-87B7-D88C1FBB72FC"
                 }).catch((err) => {
                     console.error(err)
                 })
             }
+
+            function message() {
+                // Your message function logic here
+                document.getElementById('name').value = ""
+                document.getElementById('school').value = ""
+                document.getElementById('laptop-model').value = ""
+                document.getElementById('laptop-serial').value = ""
+                alert("Form submitted. Custom message logic can be executed here.");
+            }
+
 
             window.addEventListener('load', function () {
                 let selectedDeviceId;
@@ -578,6 +674,17 @@
                 const scanQRCodeButton = document.getElementById('scan-qr-code-button');
                 const videoElement = document.getElementById('video');
                 const closeVideoButton = document.getElementById('close-video-button');
+
+                const repairForm = document.getElementById("repair-form");
+
+                repairForm.addEventListener("submit", function (event) {
+                    event.preventDefault(); // Prevent the default form submission behavior
+
+                    // Perform any form validation or data processing here
+
+                    // Call your custom message function
+                    message();
+                });
 
                 codeReader.getVideoInputDevices()
                     .then((videoInputDevices) => {

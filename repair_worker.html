@@ -48,12 +48,23 @@
     <script>!function (e, t) { "object" == typeof exports && "undefined" != typeof module ? t(exports) : "function" == typeof define && define.amd ? define(["exports"], t) : t(e.Cookie = e.Cookie || {}) }(this, function (e) { "use strict"; function t(e, t) { return Object.prototype.hasOwnProperty.call(e, t) } function o(e) { return e.replace(/[.*+?^$|[\](){}\\-]/g, "\\$&") } function n(e) { var t = e.charAt(e.length - 1), o = parseInt(e, 10), n = new Date; switch (t) { case "Y": n.setFullYear(n.getFullYear() + o); break; case "M": n.setMonth(n.getMonth() + o); break; case "D": n.setDate(n.getDate() + o); break; case "h": n.setHours(n.getHours() + o); break; case "m": n.setMinutes(n.getMinutes() + o); break; case "s": n.setSeconds(n.getSeconds() + o); break; default: n = new Date(e) }return n } function r(e) { var o = ""; for (var r in e) if (t(e, r)) if (/^expires$/i.test(r)) { var i = e[r]; "object" !== (void 0 === i ? "undefined" : l(i)) && (i += "number" == typeof i ? "D" : "", i = n(i)), o += ";" + r + "=" + i.toUTCString() } else /^secure$/.test(r) ? e[r] && (o += ";" + r) : o += ";" + r + "=" + e[r]; return t(e, "path") || (o += ";path=/"), o } function i() { var e = RegExp("(?:^|; )@key@=1(?:;|$)"); document.cookie = "@key@=1"; var t = e.test(document.cookie); return t && f("@key@"), t } function u(e) { var t = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : decodeURIComponent; if ("string" != typeof e || !e) return null; var n = RegExp("(?:^|; )" + o(e) + "(?:=([^;]*))?(?:;|$)"), r = n.exec(document.cookie); return null === r ? null : "function" == typeof t ? t(r[1]) : r[1] } function c() { for (var e = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : decodeURIComponent, t = /(?:^|; )([^=]+?)(?:=([^;]*))?(?:;|$)/g, o = {}, n = void 0; n = t.exec(document.cookie);)t.lastIndex = n.index + n.length - 1, o[n[1]] = "function" == typeof e ? e(n[2]) : n[2]; return o } function a(e, t) { var o = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : encodeURIComponent, n = arguments[3]; "object" === (void 0 === o ? "undefined" : l(o)) && null !== o && (n = o, o = encodeURIComponent); var i = r(n || {}), u = "function" == typeof o ? o(t) : t, c = e + "=" + u + i; document.cookie = c } function f(e, t) { var o = { expires: -1 }; return t && t.domain && (o.domain = t.domain), a(e, "a", o) } function s(e) { return u(e, null) } function d(e, t, o) { return a(e, t, null, o) } var l = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) { return typeof e } : function (e) { return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e }; e.isEnabled = i, e.get = u, e.getAll = c, e.set = a, e.getRaw = s, e.setRaw = d, e.remove = f, e.isCookieEnabled = i, e.getCookie = u, e.getAllCookies = c, e.setCookie = a, e.getRawCookie = s, e.setRawCookie = d, e.removeCookie = f, Object.defineProperty(e, "__esModule", { value: !0 }) });</script>
     <script type="text/javascript">var staticAssetsVersion = "22"; var assetsBaseUrl = "https://signpost.nl/";</script>
     <link rel="stylesheet" href="https://use.typekit.net/lpv1wbn.css">
+    <link rel="stylesheet" href="https://signpost.nl/assets/css/style.min.22.css">
+
     <style>
         [v-cloak] {
             display: none !important
         }
+
+        @media screen and (min-width: 48em) {
+            .Container {
+                max-width: 100%;
+            }
+        }
+
+        .Container {
+            max-width: 100%;
+        }
     </style>
-    <link rel="stylesheet" href="https://signpost.nl/assets/css/style.min.22.css">
     <title>Signpost | Home</title>
     <script>dataLayer = [];
         (function (w, d, s, l, i) {
@@ -340,6 +351,10 @@
                                             href="http://127.0.0.1:5500/repair.html" data-item-id="136299"><span
                                                 class="Nav-link-text">Repair</span></a>
                                     </li>
+                                    <li class="Nav-item"><a title="RepairWorker" class="Nav-link js-triggerLink"
+                                            href="http://127.0.0.1:5500/repair_worker.html" data-item-id="136299"><span
+                                                class="Nav-link-text">Repair Worker</span></a>
+                                    </li>
                                 </ul>
                             </nav>
                             <nav class="Nav Nav--lang" aria-label="Taalkeuze" aria-role="navigation"><span
@@ -395,23 +410,32 @@
                 padding: 20px;
                 border-radius: 5px;
                 box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-                height: 400px;
-                overflow-y: auto;
-                margin-right: 50px;
             }
 
             .problem-selection h2 {
                 font-size: 20px;
             }
 
-            .problem-selection ul {
-                list-style: none;
-                padding: 0;
-                margin: 0;
+            .problem-selection label {
+                display: block;
+                margin: 5px 0;
             }
 
-            .problem-selection li {
-                margin: 10px 0;
+            .problem-selection input[type="text"],
+            .problem-selection input[type="number"] {
+                width: 100%;
+                padding: 10px;
+                margin: 5px 0;
+                border: 1px solid #ccc;
+                border-radius: 3px;
+            }
+
+            #beschrijving {
+                width: 100%;
+                padding: 10px;
+                margin: 5px 0;
+                border: 1px solid #ccc;
+                border-radius: 3px;
             }
 
             .laptop-information {
@@ -419,6 +443,8 @@
                 padding: 20px;
                 border-radius: 5px;
                 box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+                width: 25%;
+                margin-left: 50px;
             }
 
             .laptop-information h2 {
@@ -430,8 +456,9 @@
                 margin: 5px 0;
             }
 
-            .laptop-information input[type="text"],
-            .laptop-information input[type="school"] {
+            .laptop-information select,
+            .laptop-information textarea,
+            .laptop-information input[type="text"] {
                 width: 100%;
                 padding: 10px;
                 margin: 5px 0;
@@ -440,7 +467,7 @@
             }
 
             .laptop-information input[type="submit"] {
-                background-color: #0077b6;
+                background-color: #28acbc;
                 color: white;
                 padding: 10px 20px;
                 border: none;
@@ -450,7 +477,15 @@
             }
 
             .laptop-information input[type="submit"]:hover {
-                background-color: #005b8a;
+                background-color: #208c94;
+            }
+
+            #beschrijvingProbleem {
+                width: 100%;
+                padding: 10px;
+                margin: 5px 0;
+                border: 1px solid #ccc;
+                border-radius: 3px;
             }
 
             .QR-code {
@@ -496,33 +531,44 @@
                 height: 40px;
                 cursor: pointer;
             }
+
+            .user-picture {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                float: left;
+                margin-top: 50px;
+                margin-left: 50px;
+                margin-right: 50px;
+                cursor: pointer;
+            }
+
+            .data {
+                width: 70px;
+                height: 70px;
+                border-radius: 50%;
+                float: right;
+                margin-left: 100px;
+                cursor: pointer;
+            }
         </style>
         <div class="Main">
+            <img src="./img/user.png" alt="User Picture" class="user-picture">
             <section class="repair-form">
                 <div class="problem-selection">
-                    <h2>Select Your Laptop's Problem</h2>
-                    <ul>
-                        <li><input type="checkbox" name="problem" value="Screen Repair"> Screen Repair</li>
-                        <li><input type="checkbox" name="problem" value="Battery Replacement"> Battery Replacement</li>
-                        <li><input type="checkbox" name="problem" value="Keyboard Repair"> Keyboard Repair</li>
-                        <li><input type="checkbox" name="problem" value="Software Issues"> Software Issues</li>
-                        <li><input type="checkbox" name="problem" value="Overheating"> Overheating</li>
-                        <li><input type="checkbox" name="problem" value="Hard Drive Failure"> Hard Drive Failure</li>
-                        <li><input type="checkbox" name="problem" value="Power Jack Repair"> Power Jack Repair</li>
-                        <li><input type="checkbox" name="problem" value="Data Recovery"> Data Recovery</li>
-                        <li><input type="checkbox" name="problem" value="Motherboard Repair"> Motherboard Repair</li>
-                        <li><input type="checkbox" name="problem" value="Liquid Damage"> Liquid Damage</li>
-                        <li><input type="checkbox" name="problem" value="Fan Replacement"> Fan Replacement</li>
-                        <li><input type="checkbox" name="problem" value="Bluetooth/Wi-Fi Issues"> Bluetooth/Wi-Fi Issues
-                        </li>
-                        <li><input type="checkbox" name="problem" value="Cracked Casing"> Cracked Casing</li>
-                        <li><input type="checkbox" name="problem" value="No Display"> No Display</li>
-                        <li><input type="checkbox" name="problem" value="Touchpad/Trackpad Issues"> Touchpad/Trackpad
-                            Issues</li>
-                        <li><input type="checkbox" name="problem" value="Audio/Speaker Problems"> Audio/Speaker Problems
-                        </li>
-                        <li><input type="checkbox" name="problem" value="Other Issues"> Other Issues</li>
-                    </ul>
+                    <h2>Info</h2>
+                    <button id="scan-qr-code-button" class="scan-qr-button"></button><br>
+                    <label for="naam">Naam:</label>
+                    <input type="text" id="naam" name="naam" readonly><br>
+
+                    <label for="laptop">Laptop:</label>
+                    <input type="text" id="laptop" name="laptop" readonly><br>
+
+                    <label for="probleem">Probleem:</label>
+                    <input type="text" id="probleem" name="probleem" readonly><br>
+
+                    <label for="beschrijving">Beschrijving probleem:</label>
+                    <textarea id="beschrijving" rows="5" name="beschrijving" readonly></textarea>
                 </div>
 
                 <div class="QR-code">
@@ -539,25 +585,25 @@
                 </div>
 
                 <div class="laptop-information">
-                    <h2>Laptop Information</h2>
-                    <form action="submit_repair_request.php" method="post">
-                        <button id="scan-qr-code-button" class="scan-qr-button"></button><br>
+                    <h2>Klopt het probleem</h2>
+                    <form id="repair-form">
+                        <label for="problem-status">Probleemstatus:</label>
+                        <select id="problem-status" name="problem-status" required>
+                            <option value="correct">Probleem was correct</option>
+                            <option value="not-correct">Probleem was niet correct</option>
+                        </select>
 
-                        <label for="name">Name:</label>
-                        <input type="text" id="name" name="name" required><br>
-
-                        <label for="school">School:</label>
-                        <input type="school" id="school" name="school" required><br>
-
-                        <label for="laptop-model">Laptop Model:</label>
-                        <input type="text" id="laptop-model" name="laptop-model" required><br>
-
-                        <label for="laptop-serial">Laptop Serial Number:</label>
-                        <input type="text" id="laptop-serial" name="laptop-serial" required><br>
+                        <div id="problem-comments" style="display:none;">
+                            <label for="comments">Aanvullende opmerkingen:</label>
+                            <textarea id="beschrijvingProbleem" rows="5" name="comments"></textarea>
+                        </div>
 
                         <input type="submit" value="Submit Repair Request">
                     </form>
                 </div>
+                <a href="http://127.0.0.1:5500/repair_data.html">
+                    <img src="./img/data.jpg" alt="data" class="data">
+                </a>
             </section>
         </div>
         <script type="text/javascript" src="https://unpkg.com/@zxing/library@latest"></script>
@@ -565,11 +611,20 @@
             function decodeOnce(codeReader, selectedDeviceId) {
                 codeReader.decodeFromInputVideoDevice(selectedDeviceId, 'video').then((result) => {
                     console.log(result)
-                    document.getElementById('laptop-serial').value  = result.text
+                    document.getElementById('naam').value = "Matisse Glorieux"
+                    document.getElementById('laptop').value = "Acer aspire 7"
+                    document.getElementById('probleem').value = "Touchpad"
+                    document.getElementById('beschrijving').value = "Klikken met touchpad werkt niet meer"
                 }).catch((err) => {
                     console.error(err)
                 })
             }
+
+            function message() {
+                // Your message function logic here
+                alert("Form submitted. Custom message logic can be executed here.");
+            }
+
 
             window.addEventListener('load', function () {
                 let selectedDeviceId;
@@ -578,6 +633,32 @@
                 const scanQRCodeButton = document.getElementById('scan-qr-code-button');
                 const videoElement = document.getElementById('video');
                 const closeVideoButton = document.getElementById('close-video-button');
+
+                var problemStatusSelect = document.getElementById("problem-status");
+                var problemCommentsDiv = document.getElementById("problem-comments");
+
+                // Add an event listener to the select element
+                problemStatusSelect.addEventListener("change", function () {
+                    // Check if the selected value is "not-correct"
+                    if (problemStatusSelect.value === "not-correct") {
+                        // Show the comments div
+                        problemCommentsDiv.style.display = "block";
+                    } else {
+                        // Hide the comments div
+                        problemCommentsDiv.style.display = "none";
+                    }
+                });
+
+                const repairForm = document.getElementById("repair-form");
+
+                repairForm.addEventListener("submit", function (event) {
+                    event.preventDefault(); // Prevent the default form submission behavior
+
+                    // Perform any form validation or data processing here
+
+                    // Call your custom message function
+                    message();
+                });
 
                 codeReader.getVideoInputDevices()
                     .then((videoInputDevices) => {
