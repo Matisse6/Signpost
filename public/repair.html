@@ -348,11 +348,11 @@
                                         </div>
                                     </li>
                                     <li class="Nav-item"><a title="Repair" class="Nav-link js-triggerLink"
-                                            href="http://127.0.0.1:5500/repair.html" data-item-id="136299"><span
+                                            href="./repair.html" data-item-id="136299"><span
                                                 class="Nav-link-text">Repair</span></a>
                                     </li>
                                     <li class="Nav-item"><a title="RepairWorker" class="Nav-link js-triggerLink"
-                                            href="http://127.0.0.1:5500/repair_worker.html" data-item-id="136299"><span
+                                            href="./repair_worker.html" data-item-id="136299"><span
                                                 class="Nav-link-text">Repair Worker</span></a>
                                     </li>
                                 </ul>
@@ -398,310 +398,115 @@
                 background-color: #ffffff;
             }
 
-            .repair-form {
+            .selection {
                 display: flex;
                 justify-content: center;
-                align-items: flex-start;
+                align-items: center;
+                height: 80vh;
+            }
+
+            .option {
+                text-align: center;
+                padding: 20px;
                 margin: 50px;
             }
 
-            .problem-selection {
-                background-color: #ffffff;
-                padding: 20px;
-                border-radius: 5px;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            }
-
-            .problem-selection h2 {
-                font-size: 20px;
-            }
-
-            .problem-selection label {
-                display: block;
-                margin: 5px 0;
-            }
-
-            .problem-selection input[type="text"],
-            .problem-selection input[type="number"] {
-                width: 100%;
-                padding: 10px;
-                margin: 5px 0;
-                border: 1px solid #ccc;
-                border-radius: 3px;
-            }
-
-            #beschrijving {
-                width: 100%;
-                padding: 10px;
-                margin: 5px 0;
-                border: 1px solid #ccc;
-                border-radius: 3px;
-            }
-
-            .laptop-information {
-                background-color: #ffffff;
-                padding: 20px;
-                border-radius: 5px;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-                width: 25%;
-                margin-left: 50px;
-            }
-
-            .laptop-information h2 {
-                font-size: 20px;
-            }
-
-            .laptop-information label {
-                display: block;
-                margin: 5px 0;
-            }
-
-            .laptop-information select,
-            .laptop-information textarea,
-            .laptop-information input[type="text"] {
-                width: 100%;
-                padding: 10px;
-                margin: 5px 0;
-                border: 1px solid #ccc;
-                border-radius: 3px;
-            }
-
-            .laptop-information input[type="submit"] {
+            .option-button {
                 background-color: #28acbc;
                 color: white;
                 padding: 10px 20px;
                 border: none;
                 border-radius: 3px;
                 cursor: pointer;
-                margin-top: 10px;
+                font-size: 18px;
+                margin: 10px;
             }
 
-            .laptop-information input[type="submit"]:hover {
-                background-color: #208c94;
+            .software-content {
+                max-height: 400px;
+                overflow: auto;
             }
 
-            #beschrijvingProbleem {
-                width: 100%;
-                padding: 10px;
-                margin: 5px 0;
-                border: 1px solid #ccc;
-                border-radius: 3px;
+            .software-content h2 {
+                font-size: 24px;
             }
 
-            .QR-code {
-                background-color: #ffffff;
-                padding: 20px;
-                border-radius: 5px;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-                height: 400px;
-                overflow-y: auto;
-            }
-
-            .QR-code h2 {
-                font-size: 20px;
-            }
-
-            .QR-code .video {
-                text-align: center;
-            }
-
-            .QR-code video {
-                width: 100%;
-                max-height: 300px;
-                border: 1px solid #ccc;
-                border-radius: 3px;
-            }
-
-            .red-cross-button {
-                background: none;
-                border: none;
-                font-size: 20px;
-                color: red;
-                cursor: pointer;
-                margin-top: 10px;
+            .software-content ul {
+                list-style-type: none;
                 padding: 0;
-                outline: none;
             }
 
-            .scan-qr-button {
-                background: url('./img/qr_code_scanner.png') no-repeat;
-                background-size: cover;
-                border: none;
-                width: 40px;
-                height: 40px;
-                cursor: pointer;
+            .software-content li {
+                margin-bottom: 10px;
+                border-bottom: 1px solid #ddd;
+                padding-bottom: 10px;
             }
 
-            .user-picture {
-                width: 50px;
-                height: 50px;
-                border-radius: 50%;
-                float: left;
-                margin-top: 50px;
-                margin-left: 50px;
-                margin-right: 50px;
-                cursor: pointer;
+            .software-content li:last-child {
+                border-bottom: none;
             }
 
-            .data {
-                width: 70px;
-                height: 70px;
-                border-radius: 50%;
-                float: right;
-                margin-left: 100px;
-                cursor: pointer;
+            .software-content a {
+                text-decoration: none;
+                color: #28acbc;
+                font-weight: bold;
+                transition: color 0.3s;
+            }
+
+            .software-content a:hover {
+                color: #208c94;
+            }
+
+
+            #hardware-img {
+                width: 300px;
+                height: 300px;
+                object-fit: cover;
+                border-radius: 70%;
+                margin: 40px;
             }
         </style>
         <div class="Main">
-            <img src="./img/user.png" alt="User Picture" class="user-picture">
-            <section class="repair-form">
-                <div class="problem-selection">
-                    <h2>Info</h2>
-                    <button id="scan-qr-code-button" class="scan-qr-button"></button><br>
-                    <label for="naam">Naam:</label>
-                    <input type="text" id="naam" name="naam" readonly><br>
-
-                    <label for="laptop">Laptop:</label>
-                    <input type="text" id="laptop" name="laptop" readonly><br>
-
-                    <label for="probleem">Probleem:</label>
-                    <input type="text" id="probleem" name="probleem" readonly><br>
-
-                    <label for="beschrijving">Beschrijving probleem:</label>
-                    <textarea id="beschrijving" rows="5" name="beschrijving" readonly></textarea>
-                </div>
-
-                <div class="QR-code">
-                    <h2>QR code</h2>
-                    <div class="video">
-                        <video id="video" width="300" height="200" style="border: 1px solid gray"></video>
-                        <button id="close-video-button" class="red-cross-button">&#10006;</button>
+            <div class="selection">
+                <div class="option">
+                    <h2>Software Issues</h2>
+                    <div class="software-content">
+                        <ul>
+                            <li><a href="https://youtu.be/q-mu2xBociw?si=6RmwpI4KknrM7lhN">Operating System Crashes</a>
+                            </li>
+                            <li><a href="https://youtu.be/X8HnTTbWxTM?si=0gvW6UAl52qt5UuK">Software Compatibility
+                                    Issues</a></li>
+                            <li><a href="https://youtu.be/Ej0L8tGCSxg?si=7AmYdEeAdU31L-x4">Slow Performance</a></li>
+                            <li><a href="https://youtu.be/TfLIf8vu3Zc?si=KjEuN0CDRyWOPC3K">Freezing Applications</a>
+                            </li>
+                            <li><a href="https://youtu.be/OLUnuRSQroE?si=9_UGh-frMbzYKw_d">Software Not Opening</a></li>
+                            <li><a href="https://youtu.be/9hWwY8Lo4ag?si=7L8LqMsfgIzN4aQ5">Viruses and Malware</a></li>
+                            <li><a href="https://youtu.be/U4Xy-xBhVmM?si=cPm0swgqDEIWKg4e">Driver Problems</a></li>
+                            <li><a href="https://youtu.be/Nz7OKZHi-KI?si=mp9reSv9BWQcq9Au">Software Updates and
+                                    Patches</a></li>
+                            <li><a href="https://youtu.be/sOrM3wF6Yoc?si=rfOrynLRh5FeSnFo">Network Connectivity
+                                    Issues</a></li>
+                            <li><a href="https://youtu.be/PWuWOSOCGxE?si=oQURSK8O25liw7TT">Data Loss</a></li>
+                            <li><a href="https://youtube.com/shorts/NhJoVsSgTRE?si=8dLjfFB84WUmHLva">Password
+                                    Recovery</a></li>
+                            <li><a href="https://youtu.be/pyeLZmbTG18?si=XpQAtHwFtb4SNFa9">File Format
+                                    Incompatibility</a></li>
+                            <li><a href="https://youtu.be/2HD1qHIERR4?si=gHk_gi4m6UJ1hSDQ">Software Crashes and
+                                    Errors</a></li>
+                            <li><a href="https://youtu.be/DaQd6H9rbTQ?si=DrNBQ7pFqQln0rhM">Application Not
+                                    Responding</a></li>
+                            <li><a href="https://youtu.be/_tD32UFykGg?si=4L12xhun0TVQGV-q">Peripheral Device
+                                    Problems</a></li>
+                        </ul>
                     </div>
-                    <div id="sourceSelectPanel" style="display:none">
-                        <label for="sourceSelect">Change video source:</label>
-                        <select id="sourceSelect" style="max-width:400px">
-                        </select>
-                    </div>
                 </div>
-
-                <div class="laptop-information">
-                    <h2>Klopt het probleem</h2>
-                    <form id="repair-form">
-                        <label for="problem-status">Probleemstatus:</label>
-                        <select id="problem-status" name="problem-status" required>
-                            <option value="correct">Probleem was correct</option>
-                            <option value="not-correct">Probleem was niet correct</option>
-                        </select>
-
-                        <div id="problem-comments" style="display:none;">
-                            <label for="comments">Aanvullende opmerkingen:</label>
-                            <textarea id="beschrijvingProbleem" rows="5" name="comments"></textarea>
-                        </div>
-
-                        <input type="submit" value="Submit Repair Request">
-                    </form>
+                <div class="option">
+                    <h2>Hardware Issues</h2>
+                    <img id="hardware-img" src="./public/img/acer.jpg" alt="hardware"><br>
+                    <a href="./repair_form.html" class="option-button">View Hardware Help</a>
                 </div>
-                <a href="http://127.0.0.1:5500/repair_data.html">
-                    <img src="./img/data.jpg" alt="data" class="data">
-                </a>
-            </section>
+            </div>
         </div>
-        <script type="text/javascript" src="https://unpkg.com/@zxing/library@latest"></script>
-        <script>
-            function decodeOnce(codeReader, selectedDeviceId) {
-                codeReader.decodeFromInputVideoDevice(selectedDeviceId, 'video').then((result) => {
-                    console.log(result)
-                    document.getElementById('naam').value = "Matisse Glorieux"
-                    document.getElementById('laptop').value = "Acer aspire 7"
-                    document.getElementById('probleem').value = "Touchpad"
-                    document.getElementById('beschrijving').value = "Klikken met touchpad werkt niet meer"
-                }).catch((err) => {
-                    console.error(err)
-                })
-            }
-
-            function message() {
-                // Your message function logic here
-                alert("Form submitted. Custom message logic can be executed here.");
-            }
-
-
-            window.addEventListener('load', function () {
-                let selectedDeviceId;
-                const codeReader = new ZXing.BrowserQRCodeReader()
-                console.log('ZXing code reader initialized')
-                const scanQRCodeButton = document.getElementById('scan-qr-code-button');
-                const videoElement = document.getElementById('video');
-                const closeVideoButton = document.getElementById('close-video-button');
-
-                var problemStatusSelect = document.getElementById("problem-status");
-                var problemCommentsDiv = document.getElementById("problem-comments");
-
-                // Add an event listener to the select element
-                problemStatusSelect.addEventListener("change", function () {
-                    // Check if the selected value is "not-correct"
-                    if (problemStatusSelect.value === "not-correct") {
-                        // Show the comments div
-                        problemCommentsDiv.style.display = "block";
-                    } else {
-                        // Hide the comments div
-                        problemCommentsDiv.style.display = "none";
-                    }
-                });
-
-                const repairForm = document.getElementById("repair-form");
-
-                repairForm.addEventListener("submit", function (event) {
-                    event.preventDefault(); // Prevent the default form submission behavior
-
-                    // Perform any form validation or data processing here
-
-                    // Call your custom message function
-                    message();
-                });
-
-                codeReader.getVideoInputDevices()
-                    .then((videoInputDevices) => {
-                        const sourceSelect = document.getElementById('sourceSelect')
-                        selectedDeviceId = videoInputDevices[0].deviceId
-                        if (videoInputDevices.length >= 1) {
-                            videoInputDevices.forEach((element) => {
-                                const sourceOption = document.createElement('option')
-                                sourceOption.text = element.label
-                                sourceOption.value = element.deviceId
-                                sourceSelect.appendChild(sourceOption)
-                            })
-
-                            sourceSelect.onchange = () => {
-                                selectedDeviceId = sourceSelect.value;
-                            };
-
-                            const sourceSelectPanel = document.getElementById('sourceSelectPanel')
-                            sourceSelectPanel.style.display = 'block'
-                        }
-
-
-                        scanQRCodeButton.addEventListener('click', () => {
-                            decodeOnce(codeReader, selectedDeviceId);
-                        });
-
-                        closeVideoButton.addEventListener('click', () => {
-                            if (videoElement.srcObject) {
-                                videoElement.srcObject.getTracks().forEach(track => {
-                                    track.stop();
-                                });
-                                codeReader.reset()
-                                videoElement.srcObject = null;
-                            }
-                        });
-
-                    })
-                    .catch((err) => {
-                        console.error(err)
-                    })
-            })            
-        </script>
-
 
         <footer class="Footer">
             <div class="Container">
@@ -760,7 +565,8 @@
                                         class="Nav-link-text">Cookiebeleid</span></a></li>
                             <li class="Nav-item"><a title="Algemene voorwaarden" class="Nav-link js-triggerLink"
                                     href="https://signpost.nl/nl-be/algemene-verkoopsvoorwaarden"
-                                    data-item-id="292140"><span class="Nav-link-text">Algemene voorwaarden</span></a>
+                                    data-item-id="292140"><span class="Nav-link-text">Algemene
+                                        voorwaarden</span></a>
                             </li>
                         </ul>
                     </nav>
@@ -795,8 +601,9 @@
                             </label></div>
                     </div>
                     <div class="Form-item Form-item--action"><button class="Button Button--success js-cookiesSubmit"
-                            data-type="all" data-switch="Mijn keuze bewaren">Alle cookies aanvaarden</button><br><button
-                            class="Button Button--bare js-cookiesSubmit u-marginTsm" data-type="minimal">Enkel minimale
+                            data-type="all" data-switch="Mijn keuze bewaren">Alle cookies
+                            aanvaarden</button><br><button class="Button Button--bare js-cookiesSubmit u-marginTsm"
+                            data-type="minimal">Enkel minimale
                             cookies aanvaarden</button></div>
                 </div>
             </div>

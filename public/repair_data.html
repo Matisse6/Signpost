@@ -348,11 +348,11 @@
                                         </div>
                                     </li>
                                     <li class="Nav-item"><a title="Repair" class="Nav-link js-triggerLink"
-                                            href="http://127.0.0.1:5500/repair.html" data-item-id="136299"><span
+                                            href="./repair.html" data-item-id="136299"><span
                                                 class="Nav-link-text">Repair</span></a>
                                     </li>
                                     <li class="Nav-item"><a title="RepairWorker" class="Nav-link js-triggerLink"
-                                            href="http://127.0.0.1:5500/repair_worker.html" data-item-id="136299"><span
+                                            href="./repair_worker.html" data-item-id="136299"><span
                                                 class="Nav-link-text">Repair Worker</span></a>
                                     </li>
                                 </ul>
@@ -391,342 +391,110 @@
             </div>
         </header>
         <style>
-            body {
-                font-family: Arial, sans-serif;
-                margin: 0;
-                padding: 0;
-                background-color: #ffffff;
-            }
-
-            .repair-form {
+            .Main {
                 display: flex;
+                flex-direction: column;
+                align-items: center;
                 justify-content: center;
-                align-items: flex-start;
                 margin: 50px;
             }
 
-            .problem-selection {
-                background-color: #ffffff;
-                padding: 20px;
-                border-radius: 5px;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            .image-section {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .image-section img {
+                width: 700px;
                 height: 400px;
-                overflow-y: auto;
-                margin-right: 50px;
-                font-family: Arial, sans-serif;
-                width: 300px;
             }
 
-            .problem-selection h2 {
+            .graph-selection {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+
+            .graph-selection h2 {
                 font-size: 20px;
-                color: #333;
             }
 
-            .problem-selection ul {
-                list-style: none;
-                padding: 0;
-                margin: 0;
-            }
-
-            .problem-selection li {
-                margin: 10px 0;
-            }
-
-            .problem-selection label {
-                display: block;
-                position: relative;
-                padding-left: 30px;
-                cursor: pointer;
+            .graph-selection select {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 3px;
                 font-size: 16px;
             }
 
-            .problem-selection input[type="radio"] {
-                display: none;
-            }
-
-            .problem-selection label:before {
-                content: "";
-                display: inline-block;
-                width: 18px;
-                height: 18px;
-                border: 1px solid #333;
-                border-radius: 50%;
-                position: absolute;
-                left: 0;
-                top: 2px;
-            }
-
-            .problem-selection input[type="radio"]:checked+label:before {
-                background-color: #28acbc;
-                /* Change this color to your preferred color */
-            }
-
-            .problem-selection label:hover {
-                color: #28acbc;
-                /* Change this color to your preferred color */
-            }
-
-            .laptop-information {
-                background-color: #ffffff;
-                padding: 20px;
-                border-radius: 5px;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            }
-
-            .laptop-information h2 {
-                font-size: 20px;
-            }
-
-            .laptop-information label {
-                display: block;
-                margin: 5px 0;
-            }
-
-            .laptop-information input[type="text"],
-            .laptop-information input[type="school"] {
+            .graph-display {
+                display: flex;
+                justify-content: space-between;
                 width: 100%;
-                padding: 10px;
-                margin: 5px 0;
-                border: 1px solid #ccc;
-                border-radius: 3px;
             }
 
-            .laptop-information input[type="submit"] {
-                background-color: #28acbc;
-                color: white;
-                padding: 10px 20px;
-                border: none;
-                border-radius: 3px;
-                cursor: pointer;
-                margin-top: 10px;
-            }
-
-            .laptop-information input[type="submit"]:hover {
-                background-color: #208c94;
-            }
-
-            .QR-code {
-                background-color: #ffffff;
-                padding: 20px;
-                border-radius: 5px;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-                height: 400px;
-                overflow-y: auto;
-            }
-
-            .QR-code h2 {
-                font-size: 20px;
-            }
-
-            .QR-code .video {
-                text-align: center;
-            }
-
-            .QR-code video {
-                width: 100%;
-                max-height: 300px;
-                border: 1px solid #ccc;
-                border-radius: 3px;
-            }
-
-            .red-cross-button {
-                background: none;
-                border: none;
-                font-size: 20px;
-                color: red;
-                cursor: pointer;
-                margin-top: 10px;
-                padding: 0;
-                outline: none;
-            }
-
-            .scan-qr-button {
-                background: url('./img/qr_code_scanner.png') no-repeat;
-                background-size: cover;
-                border: none;
-                width: 40px;
-                height: 40px;
-                cursor: pointer;
+            .chart {
+                width: 49%;
+                /* Use 49% to ensure some spacing between graphs */
+                max-width: 100%;
+                height: 300px;
+                /* Adjust the height as needed */
             }
         </style>
+
+
         <div class="Main">
-            <section class="repair-form">
-                <div class="problem-selection">
-                    <h2>Select Your Laptop's Problem</h2>
-                    <ul>
-                        <li>
-                            <input type="radio" id="algemeen" name="problem" value="Algemeen" checked>
-                            <label for="algemeen">Algemeen</label>
-                        </li>
-                        <li>
-                            <input type="radio" id="valschade" name="problem" value="Valschade">
-                            <label for="valschade">Valschade</label>
-                        </li>
-                        <li>
-                            <input type="radio" id="beeldscherm" name="problem" value="Beeldscherm">
-                            <label for="beeldscherm">Beeldscherm</label>
-                        </li>
-                        <li>
-                            <input type="radio" id="batterij-adapter" name="problem" value="Batterij/adapter">
-                            <label for="batterij-adapter">Batterij/adapter</label>
-                        </li>
-                        <li>
-                            <input type="radio" id="toetsenbord" name="problem" value="Toetsenbord">
-                            <label for="toetsenbord">Toetsenbord</label>
-                        </li>
-                        <li>
-                            <input type="radio" id="touchpad" name="problem" value="Touchpad">
-                            <label for="touchpad">Touchpad</label>
-                        </li>
-                        <li>
-                            <input type="radio" id="wifi" name="problem" value="Wifi">
-                            <label for="wifi">Wifi</label>
-                        </li>
-                        <li>
-                            <input type="radio" id="geluid-camera" name="problem" value="Geluid/Camera">
-                            <label for="geluid-camera">Geluid/Camera</label>
-                        </li>
-                        <li>
-                            <input type="radio" id="harde-schijf-ssd" name="problem" value="Harde schijf/SSD">
-                            <label for="harde-schijf-ssd">Harde schijf/SSD</label>
-                        </li>
-                        <li>
-                            <input type="radio" id="diefstal" name="problem" value="Diefstal">
-                            <label for="diefstal">Diefstal</label>
-                        </li>
-                        <li>
-                            <input type="radio" id="bulk" name="problem" value="Bulk">
-                            <label for="bulk">Bulk</label>
-                        </li>
-                        <li>
-                            <input type="radio" id="andere" name="problem" value="Andere" checked>
-                            <label for="andere">Andere</label>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="QR-code">
-                    <h2>QR code</h2>
-                    <div class="video">
-                        <video id="video" width="300" height="200" style="border: 1px solid gray"></video>
-                        <button id="close-video-button" class="red-cross-button">&#10006;</button>
-                    </div>
-                    <div id="sourceSelectPanel" style="display:none">
-                        <label for="sourceSelect">Change video source:</label>
-                        <select id="sourceSelect" style="max-width:400px">
-                        </select>
-                    </div>
-                </div>
-
-                <div class="laptop-information">
-                    <h2>Laptop Information</h2>
-                    <form id="repair-form">
-                        <button id="scan-qr-code-button" class="scan-qr-button"></button><br>
-
-                        <label for="name">Name:</label>
-                        <input type="text" id="name" name="name" required><br>
-
-                        <label for="school">School:</label>
-                        <input type="school" id="school" name="school" required><br>
-
-                        <label for="laptop-model">Laptop Model:</label>
-                        <input type="text" id="laptop-model" name="laptop-model" required><br>
-
-                        <label for="laptop-serial">Laptop Serial Number:</label>
-                        <input type="text" id="laptop-serial" name="laptop-serial" required><br>
-
-                        <label for="Beschrijving">Beschrijving:</label>
-                        <input type="text" id="Beschrijving" name="Beschrijving" required><br>
-
-                        <input type="submit" value="Submit Repair Request">
-                    </form>
-                </div>
-            </section>
+            <div class="image-section">
+                <img src="./img/image1.png" alt="Current Data">
+                <img src="./img/DataProjection.png" alt="Projected Data">
+            </div>
+            <div class="graph-selection">
+                <h2>Select a Graph</h2>
+                <select id="graph-selector">
+                    <option value="graph1">Graph 1</option>
+                    <option value="graph2">Graph 2</option>
+                    <option value="graph3">Graph 3</option>
+                    <option value="graph2">Graph 4</option>
+                    <option value="graph3">Graph 5</option>
+                    <!-- Add more options as needed -->
+                </select>
+            </div>
+            <div class="graph-display">
+                <!-- Graphs will be displayed here based on user selection -->
+            </div>
         </div>
-        <script type="text/javascript" src="https://unpkg.com/@zxing/library@latest"></script>
         <script>
-            function decodeOnce(codeReader, selectedDeviceId) {
-                codeReader.decodeFromInputVideoDevice(selectedDeviceId, 'video').then((result) => {
-                    console.log(result)
-                    document.getElementById('name').value = "Matisse Glorieux"
-                    document.getElementById('school').value = "Vives Kortrijk"
-                    document.getElementById('laptop-model').value = "Acer aspire 7"
-                    document.getElementById('laptop-serial').value = "694B2EFB-A7C3-4C83-87B7-D88C1FBB72FC"
-                }).catch((err) => {
-                    console.error(err)
-                })
-            }
+            document.addEventListener("DOMContentLoaded", function () {
+                const graphSelector = document.getElementById("graph-selector");
+                const firstImage = document.querySelector(".image-section img:first-child");
 
-            function message() {
-                // Your message function logic here
-                document.getElementById('name').value = ""
-                document.getElementById('school').value = ""
-                document.getElementById('laptop-model').value = ""
-                document.getElementById('laptop-serial').value = ""
-                alert("Form submitted. Custom message logic can be executed here.");
-            }
+                graphSelector.addEventListener("change", function () {
+                    const selectedGraph = graphSelector.value;
+                    let imageURL = "";
 
-
-            window.addEventListener('load', function () {
-                let selectedDeviceId;
-                const codeReader = new ZXing.BrowserQRCodeReader()
-                console.log('ZXing code reader initialized')
-                const scanQRCodeButton = document.getElementById('scan-qr-code-button');
-                const videoElement = document.getElementById('video');
-                const closeVideoButton = document.getElementById('close-video-button');
-
-                const repairForm = document.getElementById("repair-form");
-
-                repairForm.addEventListener("submit", function (event) {
-                    event.preventDefault(); // Prevent the default form submission behavior
-
-                    // Perform any form validation or data processing here
-
-                    // Call your custom message function
-                    message();
+                    if (selectedGraph === "graph1") {
+                        imageURL = "./img/image1.png";
+                    } else if (selectedGraph === "graph2") {
+                        imageURL = "./img/image2.png"; 
+                    } else if (selectedGraph === "graph3") {
+                        imageURL = "./img/image3.png"; 
+                    }
+                    else if (selectedGraph === "graph4") {
+                        imageURL = "./img/image4.png"; 
+                    }
+                    else if (selectedGraph === "graph5") {
+                        imageURL = "./img/image5.png"; 
+                    }
+                    firstImage.src = imageURL;
                 });
-
-                codeReader.getVideoInputDevices()
-                    .then((videoInputDevices) => {
-                        const sourceSelect = document.getElementById('sourceSelect')
-                        selectedDeviceId = videoInputDevices[0].deviceId
-                        if (videoInputDevices.length >= 1) {
-                            videoInputDevices.forEach((element) => {
-                                const sourceOption = document.createElement('option')
-                                sourceOption.text = element.label
-                                sourceOption.value = element.deviceId
-                                sourceSelect.appendChild(sourceOption)
-                            })
-
-                            sourceSelect.onchange = () => {
-                                selectedDeviceId = sourceSelect.value;
-                            };
-
-                            const sourceSelectPanel = document.getElementById('sourceSelectPanel')
-                            sourceSelectPanel.style.display = 'block'
-                        }
-
-
-                        scanQRCodeButton.addEventListener('click', () => {
-                            decodeOnce(codeReader, selectedDeviceId);
-                        });
-
-                        closeVideoButton.addEventListener('click', () => {
-                            if (videoElement.srcObject) {
-                                videoElement.srcObject.getTracks().forEach(track => {
-                                    track.stop();
-                                });
-                                codeReader.reset()
-                                videoElement.srcObject = null;
-                            }
-                        });
-
-                    })
-                    .catch((err) => {
-                        console.error(err)
-                    })
-            })            
+            });
         </script>
+
 
 
         <footer class="Footer">
