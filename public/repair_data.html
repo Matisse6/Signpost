@@ -450,8 +450,8 @@
 
         <div class="Main">
             <div class="image-section">
-                <img src="./img/image1.png" alt="Current Data">
-                <img src="./img/DataProjection.png" alt="Projected Data">
+                <img src="./image/image1.png" alt="Current Data">
+                <img src="./image/DataProjection.png" alt="Projected Data">
             </div>
             <div class="graph-selection">
                 <h2>Select a Graph</h2>
@@ -459,8 +459,8 @@
                     <option value="graph1">Graph 1</option>
                     <option value="graph2">Graph 2</option>
                     <option value="graph3">Graph 3</option>
-                    <option value="graph2">Graph 4</option>
-                    <option value="graph3">Graph 5</option>
+                    <option value="graph4">Graph 4</option>
+                    <option value="graph5">Graph 5</option>
                     <!-- Add more options as needed -->
                 </select>
             </div>
@@ -478,17 +478,17 @@
                     let imageURL = "";
 
                     if (selectedGraph === "graph1") {
-                        imageURL = "./img/image1.png";
+                        imageURL = "./image/image1.png";
                     } else if (selectedGraph === "graph2") {
-                        imageURL = "./img/image2.png"; 
+                        imageURL = "./image/image2.png"; 
                     } else if (selectedGraph === "graph3") {
-                        imageURL = "./img/image3.png"; 
+                        imageURL = "./image/image3.png"; 
                     }
                     else if (selectedGraph === "graph4") {
-                        imageURL = "./img/image4.png"; 
+                        imageURL = "./image/image4.png"; 
                     }
                     else if (selectedGraph === "graph5") {
-                        imageURL = "./img/image5.png"; 
+                        imageURL = "./image/image5.png"; 
                     }
                     firstImage.src = imageURL;
                 });

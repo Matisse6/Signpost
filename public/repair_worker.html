@@ -524,7 +524,7 @@
             }
 
             .scan-qr-button {
-                background: url('./img/qr_code_scanner.png') no-repeat;
+                background: url('./image/qr_code_scanner.png') no-repeat;
                 background-size: cover;
                 border: none;
                 width: 40px;
@@ -551,9 +551,107 @@
                 margin-left: 100px;
                 cursor: pointer;
             }
+
+            .problem-selection2 {
+                background-color: #ffffff;
+                padding: 20px;
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+                height: 300px;
+                overflow-y: auto;
+                margin-right: 50px;
+                font-family: Arial, sans-serif;
+                width: 300px;
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+
+            .problem-selection2 h2 {
+                font-size: 20px;
+                color: #333;
+            }
+
+            .problem-selection2 ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .problem-selection2 li {
+                margin: 10px 0;
+            }
+
+            .problem-selection2 label {
+                display: block;
+                position: relative;
+                padding-left: 30px;
+                cursor: pointer;
+                font-size: 16px;
+            }
+
+            .problem-selection2 input[type="radio"] {
+                display: none;
+            }
+
+            .problem-selection2 label:before {
+                content: "";
+                display: inline-block;
+                width: 18px;
+                height: 18px;
+                border: 1px solid #333;
+                border-radius: 50%;
+                position: absolute;
+                left: 0;
+                top: 2px;
+            }
+
+            .problem-selection2 input[type="radio"]:checked+label:before {
+                background-color: #28acbc;
+                /* Change this color to your preferred color */
+            }
+
+            .problem-selection2 label:hover {
+                color: #28acbc;
+                /* Change this color to your preferred color */
+            }
+
+            #searchInput {
+                padding: 10px;
+                width: 100%;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                margin-bottom: 10px;
+            }
+
+            /* Style for the list of serial numbers */
+            #serialNumberList {
+                list-style-type: none;
+                padding: 0;
+            }
+
+            #serialNumberList li {
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                margin-bottom: 5px;
+            }
+
+            #serialNumberList li:hover {
+                background-color: #f0f0f0;
+            }
+
+            #serialNumberListContainer {
+                height: 200px;
+                /* Set your preferred height here */
+                display: none;
+                overflow: auto;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                margin-bottom: 10px;
+            }
         </style>
         <div class="Main">
-            <img src="./img/user.png" alt="User Picture" class="user-picture">
+            <img src="./image/user.png" alt="User Picture" class="user-picture">
             <section class="repair-form">
                 <div class="problem-selection">
                     <h2>Info</h2>
@@ -592,17 +690,92 @@
                             <option value="correct">Probleem was correct</option>
                             <option value="not-correct">Probleem was niet correct</option>
                         </select>
-
-                        <div id="problem-comments" style="display:none;">
-                            <label for="comments">Aanvullende opmerkingen:</label>
-                            <textarea id="beschrijvingProbleem" rows="5" name="comments"></textarea>
+                        <div class="problem-selection2" id="list" style="display:none;">
+                            <h2>Select Your Laptop's Problem</h2>
+                            <ul>
+                                <li>
+                                    <input type="radio" id="algemeen" name="problem" value="Algemeen" checked>
+                                    <label for="algemeen">Algemeen</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="valschade" name="problem" value="Valschade">
+                                    <label for="valschade">Valschade</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="beeldscherm" name="problem" value="Beeldscherm">
+                                    <label for="beeldscherm">Beeldscherm</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="batterij-adapter" name="problem" value="Batterij/adapter">
+                                    <label for="batterij-adapter">Batterij/adapter</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="toetsenbord" name="problem" value="Toetsenbord">
+                                    <label for="toetsenbord">Toetsenbord</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="touchpad" name="problem" value="Touchpad">
+                                    <label for="touchpad">Touchpad</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="wifi" name="problem" value="Wifi">
+                                    <label for="wifi">Wifi</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="geluid-camera" name="problem" value="Geluid/Camera">
+                                    <label for="geluid-camera">Geluid/Camera</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="harde-schijf-ssd" name="problem" value="Harde schijf/SSD">
+                                    <label for="harde-schijf-ssd">Harde schijf/SSD</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="diefstal" name="problem" value="Diefstal">
+                                    <label for="diefstal">Diefstal</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="bulk" name="problem" value="Bulk">
+                                    <label for="bulk">Bulk</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="andere" name="problem" value="Andere" checked>
+                                    <label for="andere">Andere</label>
+                                </li>
+                            </ul>
                         </div>
+                        <label for="comments">Gebruikte stukken:</label>
+                        <input type="text" id="searchInput" onkeyup="searchSerialNumbers()"
+                            placeholder="Search for a serial number...">
 
-                        <input type="submit" value="Submit Repair Request">
+                        <div id="serialNumberListContainer">
+                            <ul id="serialNumberList">
+                                <li>
+                                    <input type="checkbox">
+                                    Serial Number 1
+                                </li>
+                                <li>
+                                    <input type="checkbox">
+                                    Serial Number 2
+                                </li>
+                                <li>
+                                    <input type="checkbox">
+                                    Serial Number 3
+                                </li>
+                                <li>
+                                    <input type="checkbox">
+                                    Serial Number 4
+                                </li>
+                                <li>
+                                    <input type="checkbox">
+                                    Serial Number 5
+                                </li>
+                            </ul>
+                        </div>
+                        <input type="submit" value="Verstuur reparatie">
                     </form>
                 </div>
                 <a href="./repair_data.html">
-                    <img src="./img/data.jpg" alt="data" class="data">
+                    <img src="./image/data.jpg" alt="data" class="data">
                 </a>
             </section>
         </div>
@@ -625,6 +798,23 @@
                 alert("Form submitted. Custom message logic can be executed here.");
             }
 
+            function searchSerialNumbers() {
+                var input, filter, ul, li, txtValue;
+                input = document.getElementById('searchInput');
+                filter = input.value.toUpperCase();
+                ul = document.getElementById('serialNumberList');
+                li = ul.getElementsByTagName('li');
+
+                for (var i = 0; i < li.length; i++) {
+                    txtValue = li[i].textContent || li[i].innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        li[i].style.display = '';
+                    } else {
+                        li[i].style.display = 'none';
+                    }
+                }
+            }
+
 
             window.addEventListener('load', function () {
                 let selectedDeviceId;
@@ -636,15 +826,18 @@
 
                 var problemStatusSelect = document.getElementById("problem-status");
                 var problemCommentsDiv = document.getElementById("problem-comments");
+                var problemsDiv = document.getElementById("list");
+                var problemsContainer = document.getElementById("serialNumberListContainer");
+                var problemsinput = document.getElementById("serialNumberListContainer");
 
-                // Add an event listener to the select element
                 problemStatusSelect.addEventListener("change", function () {
-                    // Check if the selected value is "not-correct"
                     if (problemStatusSelect.value === "not-correct") {
-                        // Show the comments div
+                        problemsContainer.style.display = "block";
+                        problemsDiv.style.display = "block";
                         problemCommentsDiv.style.display = "block";
                     } else {
-                        // Hide the comments div
+                        problemsContainer.style.display = "none";
+                        problemsDiv.style.display = "none";
                         problemCommentsDiv.style.display = "none";
                     }
                 });
